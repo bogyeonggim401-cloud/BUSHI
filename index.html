@@ -1,0 +1,3659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2급 언어재활사 국시 계산·수치분석 집중 훈련 앱</title>
+  <meta name="description" content="2급 언어재활사 국가시험 대비 조음음운장애(PCC, PCC-R) 및 유창성장애(%SS, %SW, SPM) 수치분석·계산 문제 집중 훈련 프로그램" />
+  
+  <!-- Google Fonts for crisp clinical & academic typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------------------------------------------------------------
+       CSS DESIGN SYSTEM: Slate & Indigo Theme, Modern Cards & Glass
+       ------------------------------------------------------------- */
+    :root {
+      --primary: #4338ca;         /* Deep Indigo */
+      --primary-light: #6366f1;   /* Indigo Accent */
+      --primary-subtle: #eef2ff;  /* Soft Indigo Tint */
+      --primary-border: #c7d2fe;
+      
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50:  #f8fafc;
+      
+      --emerald-600: #059669;
+      --emerald-100: #d1fae5;
+      --emerald-50:  #ecfdf5;
+      
+      --rose-600: #e11d48;
+      --rose-100: #ffe4e6;
+      --rose-50:  #fff1f2;
+      
+      --amber-600: #d97706;
+      --amber-100: #fef3c7;
+      --amber-50:  #fffbeb;
+
+      --blue-600: #2563eb;
+      --blue-100: #dbeafe;
+      --blue-50:  #eff6ff;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+      --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.12), 0 8px 10px -6px rgb(0 0 0 / 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      background-color: var(--slate-100);
+      color: var(--slate-800);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Navigation Bar */
+    .top-nav {
+      background: white;
+      border-bottom: 1px solid var(--slate-200);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    }
+
+    .logo-text h1 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-badge {
+      font-size: 0.7rem;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+      padding: 0.15rem 0.45rem;
+      border-radius: 9999px;
+      font-weight: 600;
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      color: var(--slate-500);
+    }
+
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--slate-600);
+      border-color: var(--slate-200);
+    }
+    .btn-ghost:hover {
+      background: var(--slate-50);
+      color: var(--slate-900);
+      border-color: var(--slate-300);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #3730a3;
+      box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+    }
+
+    .btn-emerald {
+      background: var(--emerald-600);
+      color: white;
+    }
+    .btn-emerald:hover {
+      background: #047857;
+    }
+
+    .btn-outline-primary {
+      background: white;
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+    .btn-outline-primary:hover {
+      background: var(--primary-subtle);
+    }
+
+    .btn-sm {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    /* Main Content Container */
+    .app-main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+
+    /* Screen Views */
+    .view-screen {
+      display: none;
+    }
+    .view-screen.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =============================================================
+       DASHBOARD VIEW
+       ============================================================= */
+    .hero-banner {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+      border-radius: var(--radius-xl);
+      color: white;
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-banner::after {
+      content: "📐";
+      position: absolute;
+      right: 2rem;
+      bottom: -1rem;
+      font-size: 8rem;
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: #e0e7ff;
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    /* Stats Ribbon */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .stat-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--slate-500);
+      font-weight: 500;
+    }
+
+    /* Category Cards Grid */
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .mode-card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .mode-card:hover {
+      border-color: var(--primary-light);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .mode-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .mode-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .mode-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+    }
+
+    .mode-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 0.4rem;
+    }
+
+    .mode-card p {
+      font-size: 0.875rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .mode-topics {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .mode-topics li {
+      font-size: 0.75rem;
+      background: var(--slate-100);
+      color: var(--slate-700);
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+    }
+
+    .mode-action {
+      margin-top: auto;
+    }
+
+    /* Quick Guide Box */
+    .guide-box {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .guide-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .guide-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    /* =============================================================
+       EXAM & PRACTICE VIEW
+       ============================================================= */
+    .quiz-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .quiz-header {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .quiz-info-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .quiz-domain-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 9999px;
+    }
+
+    .quiz-progress-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--slate-700);
+    }
+
+    .quiz-timer-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--slate-100);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-md);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--slate-800);
+      border: 1px solid var(--slate-200);
+    }
+
+    .quiz-timer-box.warning {
+      background: var(--rose-50);
+      color: var(--rose-600);
+      border-color: #fecdd3;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    /* OMR Sheet Navigator */
+    .omr-strip {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      overflow-x: auto;
+      gap: 0.5rem;
+    }
+
+    .omr-pills {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .omr-pill {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid var(--slate-300);
+      background: white;
+      color: var(--slate-600);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .omr-pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .omr-pill.active {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 2px 6px rgba(67, 56, 202, 0.35);
+    }
+
+    .omr-pill.answered {
+      border-color: var(--slate-400);
+      background: var(--slate-200);
+      color: var(--slate-800);
+    }
+
+    .omr-pill.active.answered {
+      background: var(--primary);
+      color: white;
+    }
+
+    .omr-pill.correct-review {
+      background: var(--emerald-600);
+      color: white;
+      border-color: var(--emerald-600);
+    }
+
+    .omr-pill.incorrect-review {
+      background: var(--rose-600);
+      color: white;
+      border-color: var(--rose-600);
+    }
+
+    /* Main Question Card */
+    .question-card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .question-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed var(--slate-200);
+    }
+
+    .q-num-badge {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .q-actions-mini {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .scenario-box {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--slate-800);
+    }
+
+    .scenario-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--primary-subtle);
+      color: var(--primary);
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Clinical Data Table */
+    .clinical-table-wrap {
+      margin: 1rem 0;
+      overflow-x: auto;
+    }
+
+    .clinical-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .clinical-table th, 
+    .clinical-table td {
+      padding: 0.65rem 0.85rem;
+      text-align: center;
+      border: 1px solid var(--slate-200);
+    }
+
+    .clinical-table th {
+      background: var(--slate-100);
+      color: var(--slate-700);
+      font-weight: 700;
+    }
+
+    .clinical-table tr:nth-child(even) {
+      background: var(--slate-50);
+    }
+
+    .phonetic-symbol {
+      font-family: 'JetBrains Mono', monospace;
+      background: #f1f5f9;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .q-prompt {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    /* 5 Options List */
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1rem 1.25rem;
+      background: white;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      user-select: none;
+    }
+
+    .option-item:hover {
+      border-color: var(--primary-border);
+      background: var(--primary-subtle);
+    }
+
+    .option-item.selected {
+      border-color: var(--primary);
+      background: var(--primary-subtle);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .option-item.correct {
+      border-color: var(--emerald-600) !important;
+      background: var(--emerald-50) !important;
+      box-shadow: 0 0 0 1px var(--emerald-600) !important;
+    }
+
+    .option-item.incorrect {
+      border-color: var(--rose-600) !important;
+      background: var(--rose-50) !important;
+      box-shadow: 0 0 0 1px var(--rose-600) !important;
+    }
+
+    .opt-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid var(--slate-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--slate-600);
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .option-item:hover .opt-circle {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .option-item.selected .opt-circle {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
+    }
+
+    .option-item.correct .opt-circle {
+      border-color: var(--emerald-600);
+      background: var(--emerald-600);
+      color: white;
+    }
+
+    .option-item.incorrect .opt-circle {
+      border-color: var(--rose-600);
+      background: var(--rose-600);
+      color: white;
+    }
+
+    .opt-text {
+      font-size: 1rem;
+      color: var(--slate-800);
+      font-weight: 500;
+    }
+
+    /* Quiz Controls Bar */
+    .quiz-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Practice Mode Hint Box */
+    .hint-card {
+      background: var(--amber-50);
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+
+    .hint-card.show {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .hint-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--amber-600);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .hint-content {
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+
+    /* =============================================================
+       5-PART DETAILED EXPLANATION CARD
+       ============================================================= */
+    .explanation-card {
+      background: white;
+      border: 2px solid var(--primary-border);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-md);
+      display: none;
+    }
+
+    .explanation-card.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .exp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--slate-200);
+    }
+
+    .exp-header h4 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .exp-verdict-badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .exp-section {
+      margin-bottom: 1.5rem;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .exp-sec-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .sec-1 .exp-sec-title { color: #0369a1; }
+    .sec-2 .exp-sec-title { color: #4338ca; }
+    .sec-3 .exp-sec-title { color: #059669; }
+    .sec-4 .exp-sec-title { color: #16a34a; }
+    .sec-5 .exp-sec-title { color: #dc2626; }
+
+    .formula-display {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-left: 3px solid var(--primary);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin: 0.5rem 0;
+      overflow-x: auto;
+    }
+
+    .math-step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.925rem;
+      color: var(--slate-700);
+    }
+
+    .math-step-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .math-step-list li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      color: var(--emerald-600);
+      font-size: 0.75rem;
+      top: 3px;
+    }
+
+    .distractor-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .distractor-item {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      color: var(--slate-700);
+      line-height: 1.5;
+    }
+
+    .dist-num {
+      font-weight: 700;
+      color: var(--rose-600);
+      margin-right: 0.4rem;
+    }
+
+    /* =============================================================
+       RESULTS VIEW (MOCK EXAM REPORT)
+       ============================================================= */
+    .result-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .result-card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 2rem;
+    }
+
+    .result-badge {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 0.4rem 1.25rem;
+      border-radius: 9999px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .result-badge.pass {
+      background: var(--emerald-100);
+      color: var(--emerald-600);
+      border: 1px solid #a7f3d0;
+    }
+
+    .result-badge.fail {
+      background: var(--rose-100);
+      color: var(--rose-600);
+      border: 1px solid #fecdd3;
+    }
+
+    .result-score {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--slate-900);
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .result-sub {
+      font-size: 1rem;
+      color: var(--slate-500);
+      margin-bottom: 2rem;
+    }
+
+    .domain-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+      margin-bottom: 2rem;
+      background: var(--slate-50);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+    }
+
+    .bar-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .bar-label-line {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .bar-track {
+      height: 10px;
+      background: var(--slate-200);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .result-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* =============================================================
+       INCORRECT NOTES (오답노트) VIEW
+       ============================================================= */
+    .notes-container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .notes-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .notes-empty {
+      background: white;
+      border: 1px dashed var(--slate-300);
+      border-radius: var(--radius-xl);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--slate-500);
+    }
+
+    .notes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .note-card {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
+    }
+
+    .note-card:hover {
+      border-color: var(--primary-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .note-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    /* =============================================================
+       FLOATING SLP CALCULATOR
+       ============================================================= */
+    .calculator-widget {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 50;
+    }
+
+    .calc-toggle-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      border: none;
+      box-shadow: var(--shadow-xl);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .calc-toggle-btn:hover {
+      transform: scale(1.08);
+      background: #3730a3;
+    }
+
+    .calc-panel {
+      position: absolute;
+      right: 0;
+      bottom: 66px;
+      width: 310px;
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      padding: 1.25rem;
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .calc-panel.active {
+      display: block;
+    }
+
+    .calc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .calc-header h5 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .calc-display {
+      background: var(--slate-900);
+      color: #38bdf8;
+      font-family: 'JetBrains Mono', monospace;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      text-align: right;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .calc-sub-display {
+      font-size: 0.75rem;
+      color: var(--slate-400);
+      text-align: right;
+      min-height: 16px;
+      margin-bottom: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .calc-keys {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.45rem;
+    }
+
+    .calc-key {
+      padding: 0.65rem 0.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      color: var(--slate-800);
+      transition: background 0.1s ease;
+    }
+
+    .calc-key:hover {
+      background: var(--slate-200);
+    }
+
+    .calc-key.op {
+      background: var(--primary-subtle);
+      color: var(--primary);
+      border-color: var(--primary-border);
+      font-weight: 700;
+    }
+
+    .calc-key.op:hover {
+      background: #e0e7ff;
+    }
+
+    .calc-key.equal {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      grid-column: span 2;
+    }
+    .calc-key.equal:hover {
+      background: #3730a3;
+    }
+
+    .calc-key.clear {
+      background: var(--rose-50);
+      color: var(--rose-600);
+      border-color: #fecdd3;
+    }
+
+    /* =============================================================
+       MODAL: FORMULA REFERENCE GUIDE
+       ============================================================= */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 60;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .modal-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      max-width: 840px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-xl);
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--slate-100);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--slate-600);
+    }
+    .modal-close:hover {
+      background: var(--slate-200);
+      color: var(--slate-900);
+    }
+
+    .formula-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    .ref-card {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .ref-card h5 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .ref-formula {
+      background: white;
+      border: 1px solid var(--slate-200);
+      padding: 0.6rem 0.85rem;
+      border-radius: var(--radius-md);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      color: var(--slate-900);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .ref-desc {
+      font-size: 0.825rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-banner { padding: 1.5rem; }
+      .hero-title { font-size: 1.4rem; }
+      .nav-text-hide { display: none; }
+      .question-card { padding: 1.25rem; }
+      .explanation-card { padding: 1.25rem; }
+      .calc-panel { width: 280px; right: -10px; }
+      .formula-card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="logo-area" onclick="app.showScreen('dashboard')">
+        <div class="logo-icon">SLP</div>
+        <div class="logo-text">
+          <h1>
+            언어재활사 2급 국시
+            <span class="logo-badge">계산·수치분석 마스터</span>
+          </h1>
+          <div class="logo-sub">조음음운장애 & 유창성장애 집중 훈련 시스템</div>
+        </div>
+      </div>
+
+      <div class="nav-tools">
+        <button class="btn btn-ghost btn-sm" onclick="app.openFormulaModal()">
+          <span>📐</span> <span class="nav-text-hide">핵심 공식 요약</span>
+        </button>
+        <button class="btn btn-outline-primary btn-sm" onclick="app.showScreen('notes')">
+          <span>📝</span> <span class="nav-text-hide">오답노트</span>
+          <span id="nav-notes-badge" class="logo-badge" style="display:none; background:var(--rose-100); color:var(--rose-600); border-color:#fecdd3;">0</span>
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="app.startMockExam()">
+          <span>⏱️</span> <span>실전 모의고사</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Body -->
+  <main class="app-main">
+
+    <!-- =========================================================
+         VIEW 1: MAIN DASHBOARD
+         ========================================================= -->
+    <div id="view-dashboard" class="view-screen active">
+      
+      <!-- Hero Banner -->
+      <section class="hero-banner">
+        <span class="hero-tag">한국보건의료인국가시험원(국시원) 출제기준 반영</span>
+        <h2 class="hero-title">조음음운 & 유창성 수치 분석,<br>단 1초의 망설임 없이 정답을 찾아냅니다.</h2>
+        <p class="hero-desc">
+          자음정확도(PCC, PCC-R)의 미묘한 판정 기준부터, 말더듬 음절 백분율(%SS), 분당 발화속도(SPM), SLD 감별 진단까지.
+          실전 임상 데이터 표와 오답 함정 분석을 통해 국시 계산 문제를 완벽히 정복하세요.
+        </p>
+      </section>
+
+      <!-- Stats Ribbon -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#e0e7ff; color:#4338ca;">📊</div>
+          <div>
+            <div id="stat-total-solved" class="stat-val">0 / 14</div>
+            <div class="stat-label">풀이한 문항 수</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#d1fae5; color:#059669;">🎯</div>
+          <div>
+            <div id="stat-accuracy" class="stat-val">0%</div>
+            <div class="stat-label">전체 정답률</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#ffe4e6; color:#e11d48;">📝</div>
+          <div>
+            <div id="stat-wrong-count" class="stat-val">0</div>
+            <div class="stat-label">오답노트 보관 문항</div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background:#fef3c7; color:#d97706;">🏆</div>
+          <div>
+            <div id="stat-best-score" class="stat-val">-</div>
+            <div class="stat-label">모의고사 최고 점수</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Selection Cards -->
+      <h3 class="section-title"><span>🎯</span> 훈련 모드 선택</h3>
+      <div class="modes-grid">
+        
+        <!-- Mode 1: Articulation -->
+        <div class="mode-card" onclick="app.startPractice('articulation')">
+          <div>
+            <div class="mode-header">
+              <div class="mode-icon" style="background:#e0e7ff; color:#4338ca;">🗣️</div>
+              <span class="mode-badge" style="background:#e0e7ff; color:#4338ca;">7문항 탑재</span>
+            </div>
+            <h3>조음음운장애 영역</h3>
+            <p>PCC(자음정확도), PCC-R(수정자음정확도), 오조음 유형별 비율, U-TAP 검사표 분석 등 수치 계산 마스터</p>
+            <ul class="mode-topics">
+              <li>PCC 산출</li>
+              <li>PCC-R 왜곡 처리</li>
+              <li>대치율·생략율</li>
+              <li>조음위치별 정확도</li>
+              <li>종성 정확도</li>
+              <li>PVC & PPC</li>
+            </ul>
+          </div>
+          <div class="mode-action">
+            <button class="btn btn-primary" style="width:100%;">집중 훈련 시작 ▶</button>
+          </div>
+        </div>
+
+        <!-- Mode 2: Fluency -->
+        <div class="mode-card" onclick="app.startPractice('fluency')">
+          <div>
+            <div class="mode-header">
+              <div class="mode-icon" style="background:#d1fae5; color:#059669;">🌊</div>
+              <span class="mode-badge" style="background:#d1fae5; color:#059669;">7문항 탑재</span>
+            </div>
+            <h3>유창성장애 영역</h3>
+            <p>%SS(말더듬 음절 백분율), %SW(낱말 백분율), 분당 발화속도(SPM/WPM), 순수 조음속도, SLD 비율 산출</p>
+            <ul class="mode-topics">
+              <li>%SS 기본 공식</li>
+              <li>중복 비유창성 함정</li>
+              <li>%SW vs %SS</li>
+              <li>발화속도 SPM</li>
+              <li>조음속도 분리</li>
+              <li>SSI-4 점수 환산</li>
+            </ul>
+          </div>
+          <div class="mode-action">
+            <button class="btn btn-emerald" style="width:100%;">집중 훈련 시작 ▶</button>
+          </div>
+        </div>
+
+        <!-- Mode 3: Real Mock Exam -->
+        <div class="mode-card" style="border: 2px solid var(--primary-light);" onclick="app.startMockExam()">
+          <div>
+            <div class="mode-header">
+              <div class="mode-icon" style="background:#fef3c7; color:#d97706;">⏱️</div>
+              <span class="mode-badge" style="background:#fef3c7; color:#d97706;">10문항 혼합</span>
+            </div>
+            <h3>실전 모의고사 모드</h3>
+            <p>조음 5문항 + 유창성 5문항 무작위 추출! 15분 시험 타이머, OMR 마킹 시트, 국시 합격/과락 자동 채점</p>
+            <ul class="mode-topics">
+              <li>제한시간 15분</li>
+              <li>OMR 번호표 네비게이터</li>
+              <li>제출 후 즉시 성적표</li>
+              <li>과목 과락 40% 적용</li>
+            </ul>
+          </div>
+          <div class="mode-action">
+            <button class="btn btn-primary" style="width:100%; background:#312e81;">실전 시험 응시 ▶</button>
+          </div>
+        </div>
+
+        <!-- Mode 4: Incorrect Notes -->
+        <div class="mode-card" onclick="app.showScreen('notes')">
+          <div>
+            <div class="mode-header">
+              <div class="mode-icon" style="background:#ffe4e6; color:#e11d48;">📝</div>
+              <span class="mode-badge" style="background:#ffe4e6; color:#e11d48;" id="card-notes-badge">0문항 보관</span>
+            </div>
+            <h3>오답노트 & 복습</h3>
+            <p>틀렸거나 헷갈렸던 문제만 골라서 재도전하고, 5단계 상세 해설과 계산 함정을 다시 한번 점검합니다.</p>
+            <ul class="mode-topics">
+              <li>틀린 문제 재풀이</li>
+              <li>5단계 심층 해설</li>
+              <li>이해 완료 시 제거</li>
+            </ul>
+          </div>
+          <div class="mode-action">
+            <button class="btn btn-outline-primary" style="width:100%;">오답노트 열기 ▶</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Guide Bar -->
+      <div class="guide-box">
+        <div class="guide-info">
+          <div class="guide-icon">💡</div>
+          <div>
+            <div style="font-weight:700; color:var(--slate-800); font-size:0.95rem;">국시 계산 문제 합격 전략 Tip</div>
+            <div style="font-size:0.85rem; color:var(--slate-600);">
+              분모(목표 자음 수 vs 발화 자음 수, 총 음절 수 vs 낱말 수)를 지문에서 정확히 추출하는 것이 정답률 80%를 좌우합니다.
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-ghost btn-sm" onclick="app.resetAllData()">🔄 학습 기록 초기화</button>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         VIEW 2: QUIZ / EXAM INTERFACE
+         ========================================================= -->
+    <div id="view-quiz" class="view-screen">
+      <div class="quiz-container">
+        
+        <!-- Quiz Control Header -->
+        <div class="quiz-header">
+          <div class="quiz-info-left">
+            <button class="btn btn-ghost btn-sm" onclick="app.confirmExitQuiz()">← 나가기</button>
+            <span id="quiz-domain-badge" class="quiz-domain-tag">조음음운장애</span>
+            <span id="quiz-mode-badge" class="logo-badge">연습 모드</span>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div id="quiz-timer-container" class="quiz-timer-box" style="display:none;">
+              <span>⏳</span> <span id="quiz-timer-display">15:00</span>
+            </div>
+            <span id="quiz-progress-text" class="quiz-progress-text">1 / 10</span>
+          </div>
+        </div>
+
+        <!-- OMR Sheet Strip -->
+        <div class="omr-strip">
+          <div style="font-size:0.8rem; font-weight:700; color:var(--slate-500); white-space:nowrap; margin-right:0.5rem;">
+            OMR 마킹
+          </div>
+          <div class="omr-pills" id="omr-pills-list">
+            <!-- Dynamically populated OMR buttons -->
+          </div>
+          <div id="omr-submit-btn-area">
+            <!-- In exam mode: [최종 제출] -->
+          </div>
+        </div>
+
+        <!-- Main Question Presentation Card -->
+        <div class="question-card">
+          <div class="question-meta">
+            <span id="q-number-title" class="q-num-badge">문항 1.</span>
+            <div class="q-actions-mini">
+              <button id="q-hint-toggle-btn" class="btn btn-ghost btn-sm" onclick="app.toggleHint()">
+                <span>💡</span> <span>공식 힌트</span>
+              </button>
+              <button id="q-bookmark-btn" class="btn btn-ghost btn-sm" onclick="app.toggleBookmark()">
+                <span>⭐</span> <span>북마크</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Formula Hint (Practice Mode) -->
+          <div id="hint-card" class="hint-card">
+            <div class="hint-title"><span>💡</span> 공식 힌트 (Formula Hint)</div>
+            <div id="hint-content" class="hint-content">공식 힌트 내용</div>
+          </div>
+
+          <!-- Scenario Presentation Box -->
+          <div class="scenario-box">
+            <span class="scenario-tag">임상 평가 사례 및 수집 자료</span>
+            <div id="q-scenario-text">환자 사례 내용</div>
+            <div id="q-table-container"></div>
+          </div>
+
+          <!-- Question Prompt -->
+          <div id="q-prompt-text" class="q-prompt">
+            질문 문항 텍스트
+          </div>
+
+          <!-- 5 Choices List -->
+          <div class="options-list" id="options-container">
+            <!-- 5 Options populated via JS -->
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="quiz-controls">
+            <div style="display:flex; gap:0.5rem;">
+              <button id="btn-prev-q" class="btn btn-ghost" onclick="app.prevQuestion()">◀ 이전</button>
+              <button id="btn-next-q" class="btn btn-ghost" onclick="app.nextQuestion()">다음 ▶</button>
+            </div>
+
+            <div style="display:flex; gap:0.5rem;" id="quiz-action-right">
+              <!-- Practice Mode: Check Answer -->
+              <button id="btn-check-answer" class="btn btn-primary" onclick="app.checkCurrentAnswer()">
+                정답 확인 및 해설 보기
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 5-PART DETAILED EXPLANATION CARD -->
+        <div id="explanation-container" class="explanation-card">
+          <div class="exp-header">
+            <h4><span>📋</span> 국시 표준 5단계 심층 해설</h4>
+            <span id="exp-verdict-tag" class="exp-verdict-badge">정답</span>
+          </div>
+
+          <!-- 1. Required Clinical Data -->
+          <div class="exp-section sec-1">
+            <div class="exp-sec-title"><span>📌</span> 1. 문제에서 확인해야 할 핵심 정보</div>
+            <div id="exp-info-content" style="font-size:0.925rem; color:var(--slate-700); line-height:1.6;"></div>
+          </div>
+
+          <!-- 2. Applicable Formula -->
+          <div class="exp-section sec-2">
+            <div class="exp-sec-title"><span>📐</span> 2. 적용해야 하는 개념 및 공식</div>
+            <div id="exp-formula-content"></div>
+          </div>
+
+          <!-- 3. Step-by-Step Math -->
+          <div class="exp-section sec-3">
+            <div class="exp-sec-title"><span>🔢</span> 3. 단계별 계산 과정 (Step-by-Step)</div>
+            <ul id="exp-steps-list" class="math-step-list"></ul>
+          </div>
+
+          <!-- 4. Correct Choice & Clinical Interpretation -->
+          <div class="exp-section sec-4">
+            <div class="exp-sec-title"><span>✅</span> 4. 정답 및 임상적 해석</div>
+            <div id="exp-answer-content" style="font-size:0.95rem; font-weight:600; color:var(--emerald-600); line-height:1.6;"></div>
+          </div>
+
+          <!-- 5. Distractor Analysis (Traps) -->
+          <div class="exp-section sec-5">
+            <div class="exp-sec-title"><span>⚠️</span> 5. 오답 보기 함정 분석 (수험생 실수 패턴)</div>
+            <div id="exp-distractors-list" class="distractor-grid"></div>
+          </div>
+
+          <!-- Next Button inside Explanation -->
+          <div style="text-align:right; margin-top:1.25rem;">
+            <button class="btn btn-primary" onclick="app.nextQuestion()">
+              다음 문항 풀기 ▶
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- =========================================================
+         VIEW 3: MOCK EXAM RESULTS
+         ========================================================= -->
+    <div id="view-result" class="view-screen">
+      <div class="result-container">
+        <div class="result-card">
+          <div id="res-pass-badge" class="result-badge pass">합격 기준 통과</div>
+          <div id="res-score-num" class="result-score">80점</div>
+          <div id="res-score-sub" class="result-sub">총 10문항 중 8문항 정답 (소요 시간: 11분 24초)</div>
+
+          <div class="domain-bars">
+            <div class="bar-row">
+              <div class="bar-label-line">
+                <span>조음음운장애 영역 (5문항)</span>
+                <span id="res-art-stat">4/5 (80%)</span>
+              </div>
+              <div class="bar-track">
+                <div id="res-art-bar" class="bar-fill" style="width:80%; background:#4338ca;"></div>
+              </div>
+            </div>
+
+            <div class="bar-row">
+              <div class="bar-label-line">
+                <span>유창성장애 영역 (5문항)</span>
+                <span id="res-flu-stat">4/5 (80%)</span>
+              </div>
+              <div class="bar-track">
+                <div id="res-flu-bar" class="bar-fill" style="width:80%; background:#059669;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button class="btn btn-primary" onclick="app.reviewExamQuestions()">
+              <span>🔍</span> 전 문항 오답·해설 복습하기
+            </button>
+            <button class="btn btn-outline-primary" onclick="app.startMockExam()">
+              <span>🔄</span> 모의고사 다시 풀기
+            </button>
+            <button class="btn btn-ghost" onclick="app.showScreen('dashboard')">
+              <span>🏠</span> 메인 대시보드로
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- =========================================================
+         VIEW 4: INCORRECT ANSWERS NOTE (오답노트)
+         ========================================================= -->
+    <div id="view-notes" class="view-screen">
+      <div class="notes-container">
+        
+        <div class="notes-header">
+          <div>
+            <h2 style="font-size:1.5rem; font-weight:800; color:var(--slate-900);">📝 취약 계산 문항 오답노트</h2>
+            <p style="font-size:0.9rem; color:var(--slate-600);">틀렸던 문제들을 반복 훈련하여 계산 실수를 완벽히 방지하세요.</p>
+          </div>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-ghost btn-sm" onclick="app.showScreen('dashboard')">← 대시보드</button>
+            <button id="btn-practice-all-notes" class="btn btn-primary btn-sm" onclick="app.startPracticeFromNotes()">
+              오답 문항 집중 풀이 ▶
+            </button>
+          </div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="notes-empty-state" class="notes-empty" style="display:none;">
+          <div style="font-size:3rem; margin-bottom:1rem;">🎉</div>
+          <h3 style="font-size:1.25rem; font-weight:700; color:var(--slate-800); margin-bottom:0.5rem;">오답노트가 비어 있습니다!</h3>
+          <p style="font-size:0.9rem; color:var(--slate-500); margin-bottom:1.5rem;">
+            연습 모드나 실전 모의고사를 풀고 틀린 문제가 발생하면 이곳에 자동 수집됩니다.
+          </p>
+          <button class="btn btn-primary" onclick="app.showScreen('dashboard')">문제 풀러 가기</button>
+        </div>
+
+        <!-- Notes List -->
+        <div id="notes-list-container" class="notes-list">
+          <!-- Populated by JS -->
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- =========================================================
+       FLOATING SLP MINI CALCULATOR
+       ========================================================= -->
+  <div class="calculator-widget">
+    <button class="calc-toggle-btn" onclick="app.toggleCalculator()" title="국시용 수치 계산기">
+      🧮
+    </button>
+
+    <div id="calc-panel" class="calc-panel">
+      <div class="calc-header">
+        <h5>국시용 수치 계산기</h5>
+        <button class="btn btn-ghost btn-sm" style="padding:0.2rem 0.5rem;" onclick="app.toggleCalculator()">✕</button>
+      </div>
+      
+      <div class="calc-sub-display" id="calc-sub"></div>
+      <div class="calc-display" id="calc-main">0</div>
+
+      <div class="calc-keys">
+        <button class="calc-key clear" onclick="calc.clear()">C</button>
+        <button class="calc-key clear" onclick="calc.backspace()">⌫</button>
+        <button class="calc-key op" onclick="calc.inputOp('%')">%</button>
+        <button class="calc-key op" onclick="calc.inputOp('/')">÷</button>
+
+        <button class="calc-key" onclick="calc.inputDigit('7')">7</button>
+        <button class="calc-key" onclick="calc.inputDigit('8')">8</button>
+        <button class="calc-key" onclick="calc.inputDigit('9')">9</button>
+        <button class="calc-key op" onclick="calc.inputOp('*')">×</button>
+
+        <button class="calc-key" onclick="calc.inputDigit('4')">4</button>
+        <button class="calc-key" onclick="calc.inputDigit('5')">5</button>
+        <button class="calc-key" onclick="calc.inputDigit('6')">6</button>
+        <button class="calc-key op" onclick="calc.inputOp('-')">-</button>
+
+        <button class="calc-key" onclick="calc.inputDigit('1')">1</button>
+        <button class="calc-key" onclick="calc.inputDigit('2')">2</button>
+        <button class="calc-key" onclick="calc.inputDigit('3')">3</button>
+        <button class="calc-key op" onclick="calc.inputOp('+')">+</button>
+
+        <button class="calc-key" onclick="calc.inputDigit('0')">0</button>
+        <button class="calc-key" onclick="calc.inputDigit('.')">.</button>
+        <button class="calc-key equal" onclick="calc.calculate()">=</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       MODAL: SLP FORMULA REFERENCE GUIDE (치트시트)
+       ========================================================= -->
+  <div id="formula-modal" class="modal-overlay" onclick="if(event.target===this) app.closeFormulaModal()">
+    <div class="modal-card">
+      <button class="modal-close" onclick="app.closeFormulaModal()">✕</button>
+      
+      <h3 style="font-size:1.4rem; font-weight:800; color:var(--slate-900); display:flex; align-items:center; gap:0.5rem;">
+        <span>📐</span> 2급 언어재활사 국시 필수 공식 치트시트
+      </h3>
+      <p style="font-size:0.875rem; color:var(--slate-600); margin-bottom:1.5rem;">
+        국시원 시험에 반복 출제되는 핵심 계산 공식과 임상적 판정 규준 요약집
+      </p>
+
+      <div class="formula-card-grid">
+        
+        <!-- Formula 1: PCC -->
+        <div class="ref-card">
+          <h5><span>🗣️</span> 자음정확도 (PCC; Shriberg & Kwiatkowski)</h5>
+          <div class="ref-formula">PCC(%) = (정확하게 산출된 자음 수 / 전체 목표 자음 수) × 100</div>
+          <div class="ref-desc">
+            <strong>중등도 판정 기준:</strong><br>
+            • 85% ~ 100%: 정상 / 경미 (Mild)<br>
+            • 65% ~ 84.9%: 경도-중등도 (Mild-Moderate)<br>
+            • 50% ~ 64.9%: 중등도-중도 (Moderate-Severe)<br>
+            • 50% 미만: 중도 (Severe)
+          </div>
+        </div>
+
+        <!-- Formula 2: PCC-R -->
+        <div class="ref-card">
+          <h5><span>🗣️</span> 수정 자음정확도 (PCC-R)</h5>
+          <div class="ref-formula">PCC-R(%) = [(정반응 자음 수 + 왜곡 자음 수) / 전체 목표 자음 수] × 100</div>
+          <div class="ref-desc">
+            일반 PCC와 달리 <strong>왜곡(Distortion)을 정반응으로 간주</strong>하고, 오직 대치(Substitution)와 생략(Deletion)만 오반응으로 처리함.
+          </div>
+        </div>
+
+        <!-- Formula 3: %SS -->
+        <div class="ref-card">
+          <h5><span>🌊</span> 말더듬 음절 백분율 (%SS)</h5>
+          <div class="ref-formula">%SS = (말더듬 발생 음절 수 / 전체 발화 음절 수) × 100</div>
+          <div class="ref-desc">
+            <strong>핵심 계산 원칙:</strong> 한 음절 내에서 반복(연발)과 연장이 동시에 중복되어 발생하더라도 '말더듬 발생 음절'은 <strong>1개</strong>로 계산함.
+          </div>
+        </div>
+
+        <!-- Formula 4: %SW -->
+        <div class="ref-card">
+          <h5><span>🌊</span> 말더듬 낱말(어절) 백분율 (%SW)</h5>
+          <div class="ref-formula">%SW = (말더듬 발생 낱말 수 / 전체 발화 낱말 수) × 100</div>
+          <div class="ref-desc">
+            낱말(어절) 단위를 분모로 함. 일반적으로 한국어는 1개 낱말이 여러 음절로 구성되므로 보통 <strong>%SW ≥ %SS</strong>의 경향을 보임.
+          </div>
+        </div>
+
+        <!-- Formula 5: Speech Rate SPM -->
+        <div class="ref-card">
+          <h5><span>⏱️</span> 총 발화속도 (Overall Speech Rate; SPM)</h5>
+          <div class="ref-formula">SPM = (총 발화 음절 수 / 총 소요시간[초]) × 60</div>
+          <div class="ref-desc">
+            휴지(pause)와 말더듬 시간을 모두 포함한 전체 시간 동안 1분당 산출된 음절 수. (WPM의 경우 분자에 총 낱말 수 적용)
+          </div>
+        </div>
+
+        <!-- Formula 6: Articulatory Rate -->
+        <div class="ref-card">
+          <h5><span>⏱️</span> 순수 조음속도 (Articulatory Rate)</h5>
+          <div class="ref-formula">조음속도(SPM) = [총 음절 수 / (총시간 - 휴지 및 말더듬시간)] × 60</div>
+          <div class="ref-desc">
+            250ms 이상의 무음 휴지 및 말더듬 연장/막힘 시간을 제외한 실제 순수 조음 시간만을 분모로 계산.
+          </div>
+        </div>
+
+        <!-- Formula 7: SLD Ratio -->
+        <div class="ref-card">
+          <h5><span>🌊</span> SLD(말더듬 유사 비유창성) 비율</h5>
+          <div class="ref-formula">SLD 비율(%) = [SLD 빈도 / 총 비유창성 빈도(SLD + OD)] × 100</div>
+          <div class="ref-desc">
+            • <strong>SLD(핵심)</strong>: 부분낱말반복(음절/음소), 단음절낱말반복, 연장, 막힘<br>
+            • <strong>OD(일반)</strong>: 다음절낱말반복, 구반복, 수정, 간투사<br>
+            • <strong>진단 지표</strong>: 총 비유창성 중 SLD 72% 이상이거나 100음절당 SLD 3% 초과 시 유창성장애 강력 의심.
+          </div>
+        </div>
+
+        <!-- Formula 8: SSI-4 -->
+        <div class="ref-card">
+          <h5><span>📊</span> SSI-4 (말더듬 중증도) 총점 산출</h5>
+          <div class="ref-formula">총점 = 빈도 점수(2~18) + 지속시간 점수(2~18) + 부수행동 점수(0~20)</div>
+          <div class="ref-desc">
+            가장 긴 3개 비유창성의 평균 시간으로 지속시간 점수를 환산하며, 눈/턱/머리/손 등 부수행동 점수를 합산하여 총점 백분위수로 중증도를 분류함.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       JAVASCRIPT APPLICATION ENGINE
+       ========================================================= -->
+  <script>
+    /* =========================================================
+       1. QUESTION BANK (14 High-Quality SLP National Exam Questions)
+       ========================================================= */
+    const QUESTION_BANK = [
+      // ----------------- ARTICULATION & PHONOLOGY (1~7) -----------------
+      {
+        id: "art-1",
+        domain: "articulation",
+        domainName: "조음음운장애",
+        title: "기본 자음정확도(PCC) 산출 및 Shriberg 중등도 판정",
+        scenario: "만 4세 3개월 남아가 조음기관의 구조나 기능에는 특이 소견이 없으나 발음이 명료하지 않아 평가를 받았다. 50개 목표단어로 구성된 조음검사(총 목표자음 수 120개)를 실시한 결과, 정반응 자음 84개, 대치 24개, 생략 12개, 왜곡 0개로 분석되었다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>총 목표단어 수</th>
+                <th>총 목표자음 수</th>
+                <th>정반응 자음</th>
+                <th>대치(Substitution)</th>
+                <th>생략(Deletion)</th>
+                <th>왜곡(Distortion)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>50개</td>
+                <td><strong>120개</strong></td>
+                <td style="color:#059669; font-weight:700;">84개</td>
+                <td style="color:#e11d48;">24개</td>
+                <td style="color:#e11d48;">12개</td>
+                <td>0개</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 아동의 자음정확도(PCC)와 Shriberg 등의 중등도 분류로 가장 알맞은 것은?",
+        options: [
+          "60.0% - 중등도-중도 (Moderate-Severe)",
+          "70.0% - 경도-중등도 (Mild-Moderate)",
+          "70.0% - 중등도-중도 (Moderate-Severe)",
+          "75.0% - 경도-중등도 (Mild-Moderate)",
+          "84.0% - 경미 (Mild)"
+        ],
+        correctIndex: 1, // ②
+        hintFormula: "PCC = (정반응 자음 수 / 총 목표 자음 수) × 100\n* 65% ~ 84.9%: 경도-중등도",
+        explanation: {
+          info: "• 전체 목표 자음 수 (분모): 120개<br>• 정반응 자음 수 (분자): 84개<br>• 오류 자음 수: 대치 24개 + 생략 12개 = 36개 (84 + 36 = 120 확인)",
+          formula: "PCC(%) = (정확하게 산출된 자음 수 / 전체 목표 자음 수) × 100",
+          steps: [
+            "PCC = (84 / 120) × 100",
+            "84 ÷ 120 = 0.70",
+            "0.70 × 100 = 70.0%"
+          ],
+          answer: "정답은 ②번 (70.0% - 경도-중등도)입니다. Shriberg와 Kwiatkowski의 자음정확도 중등도 기준에 따르면 85% 이상은 '경미', 65%~84.9%는 '경도-중등도', 50%~64.9%는 '중등도-중도', 50% 미만은 '중도'에 해당하므로 70.0%는 '경도-중등도'로 진단됩니다.",
+          distractors: [
+            { opt: "①", text: "60.0%: 오류 자음 비율(36/120=30%)과 혼동하거나 계산 실수" },
+            { opt: "③", text: "70.0% - 중등도-중도: PCC 수치는 맞았으나 70%의 중등도 기준을 50~64.9% 구간으로 잘못 판정" },
+            { opt: "④", text: "75.0%: 생략(12개)을 제외하고 대치만 오반응으로 처리하거나 분모 오산출" },
+            { opt: "⑤", text: "84.0%: 정반응 자음 개수(84개)를 분모 100으로 착각하여 그대로 백분율로 기입한 전형적 함정" }
+          ]
+        }
+      },
+      {
+        id: "art-2",
+        domain: "articulation",
+        domainName: "조음음운장애",
+        title: "수정 자음정확도(PCC-R) 산출",
+        scenario: "만 5세 기능적 조음장애 아동의 우리말 조음음운검사(U-TAP) 결과표이다. 총 목표 자음 수는 80개였으며, 산출 결과 정반응 48개, 대치 16개, 생략 8개, 왜곡(치간음화 등) 8개로 평가되었다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>총 목표 자음 수</th>
+                <th>정반응(Correct)</th>
+                <th>대치(Substitution)</th>
+                <th>생략(Deletion)</th>
+                <th>왜곡(Distortion)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>80개</strong></td>
+                <td>48개</td>
+                <td>16개</td>
+                <td>8개</td>
+                <td style="color:#d97706; font-weight:700;">8개 (치간음화)</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 아동의 수정 자음정확도(PCC-R)는 얼마인가?",
+        options: [
+          "55.0%",
+          "60.0%",
+          "65.0%",
+          "70.0%",
+          "75.0%"
+        ],
+        correctIndex: 3, // ④ 70.0%
+        hintFormula: "PCC-R은 왜곡(Distortion)을 정반응(Correct)으로 포함하여 계산합니다.",
+        explanation: {
+          info: "• 총 목표 자음 수 (분모): 80개<br>• 정반응 자음: 48개<br>• 왜곡 자음: 8개<br>• PCC-R의 핵심: 왜곡(Distortion)을 정반응(Correct)으로 포함!",
+          formula: "PCC-R(%) = [(정반응 자음 수 + 왜곡 자음 수) / 전체 목표 자음 수] × 100",
+          steps: [
+            "PCC-R 분자 = 정반응(48) + 왜곡(8) = 56개",
+            "PCC-R = (56 / 80) × 100",
+            "56 ÷ 80 = 0.70",
+            "0.70 × 100 = 70.0%"
+          ],
+          answer: "정답은 ④번 (70.0%)입니다. 일반 PCC에서는 왜곡을 오반응으로 처리하여 (48/80)×100 = 60.0%가 되지만, PCC-R(Revised)에서는 왜곡을 정반응으로 간주하므로 분자가 56개가 되어 70.0%가 됩니다.",
+          distractors: [
+            { opt: "①", text: "55.0%: 계산 실수" },
+            { opt: "②", text: "60.0%: 일반 PCC(48/80 = 60%) 공식으로 왜곡을 오반응 처리한 함정" },
+            { opt: "③", text: "65.0%: 왜곡 8개 중 절반(4개)만 인정하여 52/80으로 계산한 오류" },
+            { opt: "⑤", text: "75.0%: 생략을 정반응에 잘못 더한 오류" }
+          ]
+        }
+      },
+      {
+        id: "art-3",
+        domain: "articulation",
+        domainName: "조음음운장애",
+        title: "오조음 유형별 대치율 및 생략율 계산",
+        scenario: "조음음운장애 아동 A의 낱말 수준 조음검사 결과, 총 목표 자음 150개 중 정상 산출 90개, 대치 36개, 생략 15개, 왜곡 9개가 관찰되었다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>구분</th>
+                <th>정상 산출</th>
+                <th>대치(Substitution)</th>
+                <th>생략(Deletion)</th>
+                <th>왜곡(Distortion)</th>
+                <th>총 목표자음</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>음소 수</strong></td>
+                <td>90개</td>
+                <td style="color:#e11d48; font-weight:700;">36개</td>
+                <td style="color:#e11d48; font-weight:700;">15개</td>
+                <td>9개</td>
+                <td><strong>150개</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 아동의 '대치율(Substitution rate)'과 '생략율(Deletion rate)'로 바르게 짝지어진 것은?",
+        options: [
+          "대치율 20.0%, 생략율 8.0%",
+          "대치율 24.0%, 생략율 10.0%",
+          "대치율 24.0%, 생략율 15.0%",
+          "대치율 36.0%, 생략율 10.0%",
+          "대치율 40.0%, 생략율 16.7%"
+        ],
+        correctIndex: 1, // ②
+        hintFormula: "오류 유형별 비율 = (해당 오류 자음 수 / 전체 목표 자음 수) × 100",
+        explanation: {
+          info: "• 전체 목표 자음 수 (분모): 150개<br>• 대치 자음 수: 36개<br>• 생략 자음 수: 15개",
+          formula: "대치율(%) = (대치 자음 수 / 전체 목표 자음 수) × 100<br>생략율(%) = (생략 자음 수 / 전체 목표 자음 수) × 100",
+          steps: [
+            "대치율 = (36 / 150) × 100 = 0.24 × 100 = 24.0%",
+            "생략율 = (15 / 150) × 100 = 0.10 × 100 = 10.0%"
+          ],
+          answer: "정답은 ②번 (대치율 24.0%, 생략율 10.0%)입니다.",
+          distractors: [
+            { opt: "①", text: "대치율 20.0%, 생략율 8.0%: 분모를 180으로 잘못 잡은 오계산" },
+            { opt: "③", text: "대치율 24.0%, 생략율 15.0%: 생략 개수(15개)를 그대로 백분율(15.0%)로 기입한 함정" },
+            { opt: "④", text: "대치율 36.0%, 생략율 10.0%: 대치 개수(36개)를 그대로 백분율(36.0%)로 기입한 함정" },
+            { opt: "⑤", text: "대치율 40.0%, 생략율 16.7%: 분모를 전체 오류 자음 수(60개)로 잘못 나눈 오류 (36/60=60% 등)" }
+          ]
+        }
+      },
+      {
+        id: "art-4",
+        domain: "articulation",
+        domainName: "조음음운장애",
+        title: "조음위치별 자음정확도 분석표",
+        scenario: "만 5세 아동의 조음검사 결과표를 분석하여 조음위치에 따른 정확도를 평가하고자 한다. 다음 표는 조음위치별 목표 자음 수와 정반응 자음 수를 나타낸 것이다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>조음위치</th>
+                <th>목표 자음 수</th>
+                <th>정반응 자음 수</th>
+                <th>오반응(대치/생략)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>양순음 (/ㅂ, ㅃ, ㅍ, ㅁ/)</td>
+                <td>24개</td>
+                <td>20개</td>
+                <td>4개</td>
+              </tr>
+              <tr style="background:#eef2ff;">
+                <td><strong>치경음 (/ㄷ, ㄸ, ㅌ, ㅅ, ㅆ, ㄴ, ㄹ/)</strong></td>
+                <td><strong>40개</strong></td>
+                <td style="color:#4338ca; font-weight:700;">26개</td>
+                <td>14개</td>
+              </tr>
+              <tr>
+                <td>연구개음 (/ㄱ, ㄲ, ㅋ, ㅇ/)</td>
+                <td>20개</td>
+                <td>16개</td>
+                <td>4개</td>
+              </tr>
+              <tr>
+                <td>경구개음 (/ㅈ, ㅉ, ㅊ/)</td>
+                <td>16개</td>
+                <td>10개</td>
+                <td>6개</td>
+              </tr>
+              <tr>
+                <td>성문음 (/ㅎ/)</td>
+                <td>10개</td>
+                <td>10개</td>
+                <td>0개</td>
+              </tr>
+              <tr style="font-weight:700; background:#f1f5f9;">
+                <td>합계</td>
+                <td>110개</td>
+                <td>82개</td>
+                <td>28개</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "위 평가 결과표에서 '치경음'의 자음정확도와 '전체 자음정확도(PCC)'로 가장 알맞은 것은?",
+        options: [
+          "치경음 60.0%, 전체 70.0%",
+          "치경음 65.0%, 전체 74.5%",
+          "치경음 65.0%, 전체 82.0%",
+          "치경음 70.0%, 전체 74.5%",
+          "치경음 75.0%, 전체 80.5%"
+        ],
+        correctIndex: 1, // ②
+        hintFormula: "치경음 정확도 = (치경음 정반응 / 치경음 목표) × 100\n전체 PCC = (총 정반응 / 총 목표) × 100",
+        explanation: {
+          info: "• 치경음 목표 자음: 40개, 치경음 정반응 자음: 26개<br>• 전체 목표 자음 합계: 110개, 전체 정반응 자음 합계: 82개",
+          formula: "치경음 정확도(%) = (26 / 40) × 100<br>전체 PCC(%) = (82 / 110) × 100",
+          steps: [
+            "치경음 정확도 = (26 / 40) × 100 = 0.65 × 100 = 65.0%",
+            "전체 PCC = (82 / 110) × 100 = 0.74545... × 100 ≈ 74.5%"
+          ],
+          answer: "정답은 ②번 (치경음 65.0%, 전체 74.5%)입니다.",
+          distractors: [
+            { opt: "①", text: "치경음 60.0%, 전체 70.0%: 24/40으로 잘못 계산" },
+            { opt: "③", text: "치경음 65.0%, 전체 82.0%: 전체 자음 분모를 110이 아닌 100으로 착각하여 82.0%로 오인한 함정" },
+            { opt: "④", text: "치경음 70.0%, 전체 74.5%: 치경음 계산 실수" },
+            { opt: "⑤", text: "치경음 75.0%, 전체 80.5%: 단순 추정 오류" }
+          ]
+        }
+      },
+      {
+        id: "art-5",
+        domain: "articulation",
+        domainName: "조음음운장애",
+        title: "음소 위치별(초성 vs 종성/받침) 자음정확도 분석",
+        scenario: "만 6세 아동의 아동용 발음평가(APAC) 결과, 음소 위치별 산출 결과가 다음과 같이 집계되었다. 이 아동은 종성(받침)에서 생략 오류가 두드러지게 관찰되었다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>음소 위치</th>
+                <th>목표 자음 수</th>
+                <th>정반응 수</th>
+                <th>오류 자음 수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>어두초성 (Word-initial onset)</td>
+                <td>37개</td>
+                <td>30개</td>
+                <td>7개</td>
+              </tr>
+              <tr>
+                <td>어중초성 (Word-medial onset)</td>
+                <td>33개</td>
+                <td>27개</td>
+                <td>6개</td>
+              </tr>
+              <tr style="background:#fff1f2;">
+                <td><strong>어말종성 (Word-final coda / 받침)</strong></td>
+                <td><strong>20개</strong></td>
+                <td style="color:#e11d48; font-weight:700;">9개</td>
+                <td>11개</td>
+              </tr>
+              <tr style="font-weight:700; background:#f1f5f9;">
+                <td>합계</td>
+                <td>90개</td>
+                <td>66개</td>
+                <td>24개</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 아동의 '초성(어두+어중) 자음정확도'와 '종성 자음정확도'로 가장 알맞은 것은?",
+        options: [
+          "초성 75.5%, 종성 40.0%",
+          "초성 80.0%, 종성 45.0%",
+          "초성 81.4%, 종성 45.0%",
+          "초성 81.4%, 종성 55.0%",
+          "초성 85.0%, 종성 55.0%"
+        ],
+        correctIndex: 2, // ③
+        hintFormula: "초성 정확도 = (어두초성+어중초성 정반응 / 어두초성+어중초성 목표) × 100\n종성 정확도 = (종성 정반응 / 종성 목표) × 100",
+        explanation: {
+          info: "• 초성 전체 목표 수 = 37 + 33 = 70개<br>• 초성 전체 정반응 수 = 30 + 27 = 57개<br>• 종성 목표 수 = 20개, 종성 정반응 수 = 9개",
+          formula: "초성 정확도(%) = (57 / 70) × 100<br>종성 정확도(%) = (9 / 20) × 100",
+          steps: [
+            "초성 정확도 = (57 / 70) × 100 = 0.81428... × 100 ≈ 81.4%",
+            "종성 정확도 = (9 / 20) × 100 = 0.45 × 100 = 45.0%"
+          ],
+          answer: "정답은 ③번 (초성 81.4%, 종성 45.0%)입니다. 초성 정확도(81.4%)에 비해 종성 정확도(45.0%)가 현저히 낮아 받침소리의 조음 지도(음소 축약 및 종성 탈락 억제)가 우선 과제임을 알 수 있습니다.",
+          distractors: [
+            { opt: "①", text: "초성 75.5%, 종성 40.0%: 계산 오류" },
+            { opt: "②", text: "초성 80.0%, 종성 45.0%: 57/70을 임의로 반올림하여 80%로 표기" },
+            { opt: "④", text: "초성 81.4%, 종성 55.0%: 종성 오답 개수(11개)로 (11/20=55.0%) 계산한 함정" },
+            { opt: "⑤", text: "초성 85.0%, 종성 55.0%: 분모 분자 혼동" }
+          ]
+        }
+      },
+      {
+        id: "art-6",
+        domain: "articulation",
+        domainName: "조음음운장애",
+        title: "낱말 수준 vs 연속발화(문장) 수준 PCC 비교 분석",
+        scenario: "조음평가 시 단어 수준 조음검사(총 목표자음 70개)와 3분 자발화 연속담화 표본(총 목표자음 140개)을 수집하여 비교하였다. 낱말 검사에서는 정반응 56개(대치 10개, 생략 4개)였으나, 연속발화 표본에서는 정반응 84개(대치 35개, 생략 21개)로 나타났다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>검사 과제</th>
+                <th>목표 자음 수</th>
+                <th>정반응 수</th>
+                <th>대치</th>
+                <th>생략</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>낱말 수준 조음검사</strong></td>
+                <td>70개</td>
+                <td style="color:#059669; font-weight:700;">56개</td>
+                <td>10개</td>
+                <td>4개</td>
+              </tr>
+              <tr>
+                <td><strong>연속발화(문장) 표본</strong></td>
+                <td>140개</td>
+                <td style="color:#059669; font-weight:700;">84개</td>
+                <td>35개</td>
+                <td>21개</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "낱말 수준의 PCC와 연속발화 수준의 PCC의 차이값(낱말 수준 PCC - 연속발화 수준 PCC)은 얼마인가?",
+        options: [
+          "10.0%p",
+          "15.0%p",
+          "20.0%p",
+          "25.0%p",
+          "28.0%p"
+        ],
+        correctIndex: 2, // ③
+        hintFormula: "낱말 PCC = (56 / 70) × 100\n연속발화 PCC = (84 / 140) × 100\n차이 = 낱말 PCC - 연속발화 PCC",
+        explanation: {
+          info: "• 낱말 수준: 분모 70개, 분자 56개<br>• 연속발화 수준: 분모 140개, 분자 84개",
+          formula: "차이값 = [(56 / 70) × 100] - [(84 / 140) × 100]",
+          steps: [
+            "낱말 수준 PCC = (56 / 70) × 100 = 0.80 × 100 = 80.0%",
+            "연속발화 수준 PCC = (84 / 140) × 100 = 0.60 × 100 = 60.0%",
+            "두 조건 간의 PCC 차이 = 80.0% - 60.0% = 20.0%p"
+          ],
+          answer: "정답은 ③번 (20.0%p)입니다. 낱말 수준(80.0%)에 비해 언어적 부하가 증가하는 문장/연속발화 수준(60.0%)에서 자음정확도가 20%p 크게 하락함을 임상적으로 확인할 수 있습니다.",
+          distractors: [
+            { opt: "①", text: "10.0%p: 계산 실수" },
+            { opt: "②", text: "15.0%p: 연속발화 PCC를 65%로 잘못 계산" },
+            { opt: "④", text: "25.0%p: 낱말 PCC를 85%로 잘못 계산" },
+            { opt: "⑤", text: "28.0%p: 정반응 자음 개수 차이(84 - 56 = 28개)를 그대로 백분율포인트로 착각한 함정" }
+          ]
+        }
+      },
+      {
+        id: "art-7",
+        domain: "articulation",
+        domainName: "조음음운장애",
+        title: "모음정확도(PVC) 및 전음소정확도(PPC) 복합 산출",
+        scenario: "음운 발달 지연 아동의 30개 목표 낱말 전사 자료를 분석하였다. 목표 음소는 총 150개(목표 자음 90개, 목표 모음 60개)였으며, 산출 분석 결과 자음은 정반응 54개(대치 24, 생략 12), 모음은 정반응 51개(대치 9개, 왜곡 0)로 나타났다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>음소 범주</th>
+                <th>목표 음소 수</th>
+                <th>정반응 수</th>
+                <th>오류 음소 수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>자음 (Consonants)</td>
+                <td>90개</td>
+                <td>54개</td>
+                <td>36개</td>
+              </tr>
+              <tr style="background:#eef2ff;">
+                <td><strong>모음 (Vowels)</strong></td>
+                <td><strong>60개</strong></td>
+                <td style="color:#4338ca; font-weight:700;">51개</td>
+                <td>9개</td>
+              </tr>
+              <tr style="font-weight:700; background:#f1f5f9;">
+                <td><strong>전체 음소 (PPC)</strong></td>
+                <td><strong>150개</strong></td>
+                <td style="color:#059669; font-weight:700;">105개 (54+51)</td>
+                <td>45개</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 아동의 '모음정확도(PVC)'와 자음과 모음을 모두 합산한 '전음소정확도(PPC)'는 각각 얼마인가?",
+        options: [
+          "PVC 80.0%, PPC 65.0%",
+          "PVC 85.0%, PPC 60.0%",
+          "PVC 85.0%, PPC 70.0%",
+          "PVC 90.0%, PPC 70.0%",
+          "PVC 85.0%, PPC 75.0%"
+        ],
+        correctIndex: 2, // ③
+        hintFormula: "PVC = (모음 정반응 / 모음 목표) × 100\nPPC = (자음 정반응 + 모음 정반응 / 전체 목표 음소 수) × 100",
+        explanation: {
+          info: "• 모음 목표: 60개, 모음 정반응: 51개<br>• 전체 목표 음소 (자음 90 + 모음 60): 150개<br>• 전체 정반응 음소 (자음 54 + 모음 51): 105개",
+          formula: "PVC(%) = (51 / 60) × 100<br>PPC(%) = (105 / 150) × 100",
+          steps: [
+            "PVC = (51 / 60) × 100 = 0.85 × 100 = 85.0%",
+            "PPC = (105 / 150) × 100 = 0.70 × 100 = 70.0%",
+            "(참고: 자음정확도 PCC = 54 / 90 × 100 = 60.0%)"
+          ],
+          answer: "정답은 ③번 (PVC 85.0%, PPC 70.0%)입니다.",
+          distractors: [
+            { opt: "①", text: "PVC 80.0%, PPC 65.0%: 계산 실수" },
+            { opt: "②", text: "PVC 85.0%, PPC 60.0%: PPC를 자음정확도(PCC, 60.0%)로 혼동하여 기입한 함정" },
+            { opt: "④", text: "PVC 90.0%, PPC 70.0%: PVC 분모 분자 오류" },
+            { opt: "⑤", text: "PVC 85.0%, PPC 75.0%: PPC 분자를 112 등으로 오산출" }
+          ]
+        }
+      },
+
+      // ----------------- FLUENCY DISORDERS (8~14) -----------------
+      {
+        id: "flu-8",
+        domain: "fluency",
+        domainName: "유창성장애",
+        title: "%SS(말더듬 음절 백분율) 기본 계산",
+        scenario: "만 22세 성인 남성 말더듬인이 400개 음절로 이루어진 표준 낭독 문단을 읽는 동안 유창성 검사를 실시하였다. 비유창성 기록표를 분석한 결과 반복 18개 음절, 연장 10개 음절, 막힘 4개 음절이 발생하였다. (각 말더듬 행동은 서로 다른 음절에서 발생함)",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>총 발화 음절 수</th>
+                <th>반복(Repetition) 음절</th>
+                <th>연장(Prolongation) 음절</th>
+                <th>막힘(Block) 음절</th>
+                <th>총 말더듬 음절</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>400음절</strong></td>
+                <td>18음절</td>
+                <td>10음절</td>
+                <td>4음절</td>
+                <td style="color:#e11d48; font-weight:700;">32음절</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 환자의 말더듬 음절 백분율(%SS)은 얼마인가?",
+        options: [
+          "4.5%",
+          "6.4%",
+          "7.0%",
+          "8.0%",
+          "12.5%"
+        ],
+        correctIndex: 3, // ④
+        hintFormula: "%SS = (말더듬 발생 음절 수 / 전체 발화 음절 수) × 100",
+        explanation: {
+          info: "• 전체 발화 음절 수 (분모): 400음절<br>• 말더듬 발생 음절 수 (분자): 18 + 10 + 4 = 32음절",
+          formula: "%SS = (말더듬 발생 음절 수 / 전체 발화 음절 수) × 100",
+          steps: [
+            "말더듬 음절 총합 = 18 + 10 + 4 = 32음절",
+            "%SS = (32 / 400) × 100",
+            "32 ÷ 400 = 0.08",
+            "0.08 × 100 = 8.0%"
+          ],
+          answer: "정답은 ④번 (8.0%)입니다. 전체 400음절 중 32음절에서 비정상적 비유창성이 발생하였으므로 %SS는 8.0%입니다.",
+          distractors: [
+            { opt: "①", text: "4.5%: 반복 음절(18/400 = 4.5%)만 계산하고 연장과 막힘을 누락한 함정" },
+            { opt: "②", text: "6.4%: 분모를 500으로 잘못 나눈 계산 오류" },
+            { opt: "③", text: "7.0%: 막힘(4개)을 제외하고 (28/400 = 7.0%) 계산한 오류" },
+            { opt: "⑤", text: "12.5%: 400을 32로 나눈(400/32 = 12.5) 분자·분모 역전 오류" }
+          ]
+        }
+      },
+      {
+        id: "flu-9",
+        domain: "fluency",
+        domainName: "유창성장애",
+        title: "복합·중복 비유창성 발생 시 %SS 산출 원칙",
+        scenario: "만 7세 아동이 300음절의 자발화 검사를 수행하였다. 치료사의 비유창성 분석표에 따르면 다음과 같은 비유창성이 기록되었다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>비유창성 발생 형태</th>
+                <th>해당 음절 수</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>음절 반복(PWR) 단독 발생</td>
+                <td>15음절</td>
+                <td>서로 다른 15개 음절</td>
+              </tr>
+              <tr>
+                <td>연장(PR) 단독 발생</td>
+                <td>6음절</td>
+                <td>서로 다른 6개 음절</td>
+              </tr>
+              <tr style="background:#fff1f2;">
+                <td><strong>동일 음절 내 '반복 후 연장' 중복 발생</strong></td>
+                <td><strong>3음절</strong></td>
+                <td style="color:#e11d48; font-weight:700;">1개 음절에서 연발과 연장이 함께 나타남</td>
+              </tr>
+              <tr>
+                <td>막힘(BLK) 단독 발생</td>
+                <td>4음절</td>
+                <td>서로 다른 4개 음절</td>
+              </tr>
+              <tr style="font-weight:700; background:#f1f5f9;">
+                <td>총 발화 음절 수</td>
+                <td>300음절</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "유창성 평가의 음절 단위 산출 원칙에 따른 이 아동의 %SS(말더듬 음절 백분율)는 얼마인가?",
+        options: [
+          "8.0%",
+          "9.3%",
+          "10.3%",
+          "11.0%",
+          "12.4%"
+        ],
+        correctIndex: 1, // ② 9.3%
+        hintFormula: "한 음절 내에서 여러 비유창성이 중복 발생하더라도, %SS에서는 '말더듬 발생 음절 1개'로 카운트합니다.",
+        explanation: {
+          info: "• 전체 발화 음절 수: 300음절<br>• 핵심 원칙: %SS는 '말더듬 사건(Event) 횟수'가 아니라 <strong>'말더듬이 일어난 음절 수(Stuttered Syllables)'</strong>를 계산함!<br>• 따라서 1개 음절 내에서 반복과 연장이 동시에 일어난 3개 음절은 그대로 3음절로 카운트함.",
+          formula: "%SS = (말더듬 발생 음절 수 / 전체 발화 음절 수) × 100",
+          steps: [
+            "말더듬 발생 음절 수 = 15(반복) + 6(연장) + 3(중복) + 4(막힘) = 28음절",
+            "(만약 중복 발생을 2개 사건으로 세어 15+6+6+4=31개로 계산하면 오답!)",
+            "%SS = (28 / 300) × 100",
+            "28 ÷ 300 = 0.09333...",
+            "0.09333... × 100 ≈ 9.33% → 9.3%"
+          ],
+          answer: "정답은 ②번 (9.3%)입니다. 국시에서 가장 빈번하게 출제되는 '중복 비유창성 함정'으로, 음절 백분율(%SS) 산출 시 음절 단위로 1회만 계산해야 합니다.",
+          distractors: [
+            { opt: "①", text: "8.0%: 중복 발생 3음절을 아예 제외하고 24/300=8.0%로 계산한 오류" },
+            { opt: "③", text: "10.3%: 중복 발생한 3개 음절을 6회 사건으로 중복 계산하여 31/300 × 100 = 10.33%로 산출한 가장 매력적인 오답 함정" },
+            { opt: "④", text: "11.0%: 계산 실수" },
+            { opt: "⑤", text: "12.4%: 계산 실수" }
+          ]
+        }
+      },
+      {
+        id: "flu-10",
+        domain: "fluency",
+        domainName: "유창성장애",
+        title: "%SW(말더듬 낱말 백분율) 및 %SS 비교",
+        scenario: "총 200개 낱말(어절), 총 450개 음절로 구성된 이야기 다시말하기 과제에서 말더듬 평가를 실시하였다. 평가 결과 24개의 낱말에서 말더듬이 나타났으며, 말더듬이 발생한 총 음절 수는 27개였다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>단위</th>
+                <th>전체 발화 수</th>
+                <th>말더듬 발생 수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>낱말 (Word / 어절)</strong></td>
+                <td>200개</td>
+                <td style="color:#4338ca; font-weight:700;">24개</td>
+              </tr>
+              <tr>
+                <td><strong>음절 (Syllable)</strong></td>
+                <td>450개</td>
+                <td style="color:#059669; font-weight:700;">27개</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 평가에서 '말더듬 낱말 백분율(%SW)'과 '말더듬 음절 백분율(%SS)'은 각각 얼마인가?",
+        options: [
+          "%SW = 6.0%, %SS = 12.0%",
+          "%SW = 10.0%, %SS = 5.5%",
+          "%SW = 12.0%, %SS = 6.0%",
+          "%SW = 12.0%, %SS = 8.0%",
+          "%SW = 14.5%, %SS = 6.0%"
+        ],
+        correctIndex: 2, // ③
+        hintFormula: "%SW = (말더듬 낱말 수 / 총 낱말 수) × 100\n%SS = (말더듬 음절 수 / 총 음절 수) × 100",
+        explanation: {
+          info: "• 낱말 기준: 총 200개 중 24개 말더듬 발생<br>• 음절 기준: 총 450개 중 27개 말더듬 발생",
+          formula: "%SW = (말더듬 낱말 수 / 전체 낱말 수) × 100<br>%SS = (말더듬 음절 수 / 전체 음절 수) × 100",
+          steps: [
+            "%SW = (24 / 200) × 100 = 0.12 × 100 = 12.0%",
+            "%SS = (27 / 450) × 100 = (3 / 50) × 100 = 0.06 × 100 = 6.0%"
+          ],
+          answer: "정답은 ③번 (%SW = 12.0%, %SS = 6.0%)입니다. 한국어는 1개 낱말(어절)이 평균 2~3개의 음절로 구성되므로, 한 낱말 내의 한 음절만 더듬어도 해당 낱말 전체가 말더듬 낱말로 산정되어 일반적으로 %SW가 %SS보다 높게 나타납니다.",
+          distractors: [
+            { opt: "①", text: "%SW = 6.0%, %SS = 12.0%: %SW와 %SS를 반대로 뒤바꾼 함정" },
+            { opt: "②", text: "%SW = 10.0%, %SS = 5.5%: 계산 오류" },
+            { opt: "④", text: "%SW = 12.0%, %SS = 8.0%: %SS 분모를 337 등으로 잘못 나눈 오류" },
+            { opt: "⑤", text: "%SW = 14.5%, %SS = 6.0%: %SW 분자 오류" }
+          ]
+        }
+      },
+      {
+        id: "flu-11",
+        domain: "fluency",
+        domainName: "유창성장애",
+        title: "총 발화속도(SPM) 계산 - 시간 단위 환산",
+        scenario: "만 20세 성인이 480개 음절로 이루어진 설명 담화 과제를 산출하는데 총 2분 40초(160초)가 소요되었다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>발화 과제</th>
+                <th>총 산출 음절 수</th>
+                <th>총 소요 시간</th>
+                <th>소요 시간(초 환산)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>설명 담화</td>
+                <td style="font-weight:700; color:#4338ca;">480음절</td>
+                <td>2분 40초</td>
+                <td><strong>160초</strong> (2×60 + 40)</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 발화자의 분당 발화속도(Syllables Per Minute; SPM)는 얼마인가?",
+        options: [
+          "120 SPM",
+          "150 SPM",
+          "160 SPM",
+          "180 SPM",
+          "200 SPM"
+        ],
+        correctIndex: 3, // ④ 180 SPM
+        hintFormula: "SPM = (총 발화 음절 수 / 총 소요시간[초]) × 60",
+        explanation: {
+          info: "• 총 발화 음절 수: 480음절<br>• 소요 시간: 2분 40초 = (2 × 60) + 40 = 160초<br>• SPM은 1분(60초)당 음절 수이므로 60을 곱함.",
+          formula: "SPM = (총 음절 수 / 총 소요초) × 60",
+          steps: [
+            "초당 음절 수 = 480 ÷ 160 = 3.0 (음절/초)",
+            "SPM = 3.0 × 60초 = 180 SPM"
+          ],
+          answer: "정답은 ④번 (180 SPM)입니다. 성인의 정상적인 대화 발화속도는 약 200~250 SPM 내외이므로, 이 환자의 발화속도(180 SPM)는 다소 느린 편에 속합니다.",
+          distractors: [
+            { opt: "①", text: "120 SPM: 480 ÷ 4 등으로 계산한 오류" },
+            { opt: "②", text: "150 SPM: 480 ÷ 3.2분 등으로 계산한 오류" },
+            { opt: "③", text: "160 SPM: 소요 초(160초)를 그대로 속도로 착각하거나 오기" },
+            { opt: "⑤", text: "200 SPM: 2분 40초를 2.4분으로 잘못 계산하여 (480 / 2.4 = 200) 도출된 전형적 시간 진법 환산 함정" }
+          ]
+        }
+      },
+      {
+        id: "flu-12",
+        domain: "fluency",
+        domainName: "유창성장애",
+        title: "총 발화속도 vs 순수 조음속도(Articulatory Rate) 분리",
+        scenario: "만 35세 성인의 대화 발화 300음절을 녹음하여 음향분석 소프트웨어로 분석하였다. 총 녹음 소요 시간은 120초였으며, 발화 중 발생한 250ms 이상의 무음 휴지(Pause) 및 말더듬 지속시간의 합계는 45초로 측정되었다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>총 발화 음절 수</th>
+                <th>전체 소요 시간</th>
+                <th>휴지 및 말더듬 시간</th>
+                <th>순수 조음 시간</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>300음절</strong></td>
+                <td>120초 (휴지 포함)</td>
+                <td style="color:#e11d48;">45초</td>
+                <td style="color:#059669; font-weight:700;">75초 (120 - 45)</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "이 사람의 '총 발화속도(Overall Speech Rate; SPM)'와 휴지/말더듬 시간을 제외한 '조음속도(Articulatory Rate; SPM)'는 각각 얼마인가?",
+        options: [
+          "총 발화속도 120 SPM, 조음속도 180 SPM",
+          "총 발화속도 150 SPM, 조음속도 200 SPM",
+          "총 발화속도 150 SPM, 조음속도 240 SPM",
+          "총 발화속도 180 SPM, 조음속도 240 SPM",
+          "총 발화속도 200 SPM, 조음속도 270 SPM"
+        ],
+        correctIndex: 2, // ③
+        hintFormula: "총 발화속도 = (300음절 / 120초) × 60\n순수 조음속도 = [300음절 / (120초 - 45초)] × 60",
+        explanation: {
+          info: "• 총 음절: 300음절<br>• 총 소요시간: 120초<br>• 순수 조음시간 = 120초 - 45초(휴지/말더듬) = 75초",
+          formula: "총 발화속도(SPM) = (총 음절 / 총 시간) × 60<br>순수 조음속도(SPM) = (총 음절 / 순수 조음 시간) × 60",
+          steps: [
+            "총 발화속도 = (300 / 120) × 60 = 2.5 × 60 = 150 SPM",
+            "순수 조음속도 = (300 / 75) × 60 = 4.0 × 60 = 240 SPM"
+          ],
+          answer: "정답은 ③번 (총 발화속도 150 SPM, 조음속도 240 SPM)입니다. 비유창성과 휴지가 길어 총 발화속도는 150 SPM으로 느리지만, 실제 조음기관을 움직여 산출하는 순수 조음속도는 240 SPM으로 매우 정상적이고 빠름을 구별할 수 있습니다.",
+          distractors: [
+            { opt: "①", text: "총 발화속도 120 SPM, 조음속도 180 SPM: 계산 실수" },
+            { opt: "②", text: "총 발화속도 150 SPM, 조음속도 200 SPM: 조음속도 분모를 90초로 나눈 계산 오류" },
+            { opt: "④", text: "총 발화속도 180 SPM, 조음속도 240 SPM: 총 발화속도 계산 실수" },
+            { opt: "⑤", text: "총 발화속도 200 SPM, 조음속도 270 SPM: 비례식 오류" }
+          ]
+        }
+      },
+      {
+        id: "flu-13",
+        domain: "fluency",
+        domainName: "유창성장애",
+        title: "SLD(말더듬 유사 비유창성) 비율 계산 및 진단 지표",
+        scenario: "만 5세 아동의 500음절 자발화 표본에서 총 50회의 비유창성이 관찰되었다. 비유창성 유형별 빈도는 다음과 같다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>비유창성 유형</th>
+                <th>발생 빈도</th>
+                <th>분류 범주</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>음소 및 음절 반복 (PWR)</td>
+                <td>18회</td>
+                <td rowspan="4" style="background:#fff1f2; color:#e11d48; font-weight:700;">SLD (핵심 비유창성)</td>
+              </tr>
+              <tr>
+                <td>단음절 낱말 반복 (WWR)</td>
+                <td>12회</td>
+              </tr>
+              <tr>
+                <td>연장 (Prolongation)</td>
+                <td>5회</td>
+              </tr>
+              <tr>
+                <td>막힘 (Block)</td>
+                <td>1회</td>
+              </tr>
+              <tr>
+                <td>간투사 ('어', '음' 등 Interjection)</td>
+                <td>10회</td>
+                <td rowspan="2" style="background:#f1f5f9; color:#475569;">OD (정상적/기타 비유창성)</td>
+              </tr>
+              <tr>
+                <td>수정 (Revision)</td>
+                <td>4회</td>
+              </tr>
+              <tr style="font-weight:700; background:#eef2ff;">
+                <td>총 비유창성 빈도 합계</td>
+                <td>50회</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        `,
+        prompt: "전체 비유창성 중 '말더듬 유사 비유창성(SLD)'이 차지하는 비율(%)과 '100음절당 SLD 빈도'는 각각 얼마인가?",
+        options: [
+          "SLD 비율 60.0%, 100음절당 6.0%",
+          "SLD 비율 70.0%, 100음절당 7.0%",
+          "SLD 비율 72.0%, 100음절당 7.2%",
+          "SLD 비율 72.0%, 100음절당 10.0%",
+          "SLD 비율 80.0%, 100음절당 8.0%"
+        ],
+        correctIndex: 2, // ③
+        hintFormula: "SLD 빈도 = PWR + WWR + 연장 + 막힘\nSLD 비율 = (SLD 빈도 / 총 비유창성 50회) × 100\n100음절당 SLD = (SLD 빈도 / 총 500음절) × 100",
+        explanation: {
+          info: "• SLD (말더듬 유사 비유창성) 항목: 음소/음절반복(18) + 단음절낱말반복(12) + 연장(5) + 막힘(1) = 36회<br>• OD (기타 비유창성) 항목: 간투사(10) + 수정(4) = 14회<br>• 총 비유창성 빈도 = 36 + 14 = 50회<br>• 총 발화 음절 수 = 500음절",
+          formula: "SLD 비율(%) = (SLD 빈도 / 총 비유창성 빈도) × 100<br>100음절당 SLD 빈도 = (SLD 빈도 / 총 음절 수) × 100",
+          steps: [
+            "SLD 발생 빈도 = 18 + 12 + 5 + 1 = 36회",
+            "총 비유창성 중 SLD 비율 = (36 / 50) × 100 = 72.0%",
+            "100음절당 SLD 빈도 = (36 / 500) × 100 = 7.2%"
+          ],
+          answer: "정답은 ③번 (SLD 비율 72.0%, 100음절당 7.2%)입니다. Ambrose & Yairi의 진단 기준에 따르면 총 비유창성 중 SLD 비율이 72% 이상이거나 100음절당 SLD가 3개 이상일 때 정상적 비유창성이 아닌 초기 말더듬(유창성장애)으로 진단합니다.",
+          distractors: [
+            { opt: "①", text: "SLD 비율 60.0%, 100음절당 6.0%: 단음절 낱말 반복(WWR)을 제외한 오계산" },
+            { opt: "②", text: "SLD 비율 70.0%, 100음절당 7.0%: 계산 실수" },
+            { opt: "④", text: "SLD 비율 72.0%, 100음절당 10.0%: 100음절당 빈도를 SLD가 아닌 전체 비유창성(50/500 = 10%)으로 잘못 기입한 함정" },
+            { opt: "⑤", text: "SLD 비율 80.0%, 100음절당 8.0%: 분류 실수" }
+          ]
+        }
+      },
+      {
+        id: "flu-14",
+        domain: "fluency",
+        domainName: "유창성장애",
+        title: "SSI-4(말더듬 중증도 평가) 종합 점수 및 등급 판정",
+        scenario: "만 18세 청소년의 말더듬 중증도 평가(SSI-4) 실시 결과표이다.",
+        table: `
+          <table class="clinical-table">
+            <thead>
+              <tr>
+                <th>평가 하위 영역</th>
+                <th>원점수 측정값</th>
+                <th>SSI-4 변환 점수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1. 비유창성 빈도 (Frequency)</td>
+                <td>평균 %SS 9.5%</td>
+                <td style="font-weight:700; color:#4338ca;">13점</td>
+              </tr>
+              <tr>
+                <td>2. 지속시간 (Duration)</td>
+                <td>가장 긴 3개 평균 1.2초</td>
+                <td style="font-weight:700; color:#4338ca;">8점</td>
+              </tr>
+              <tr>
+                <td>3. 신체 부수행동 (Concomitants)</td>
+                <td>
+                  • 눈 깜빡임: 2점<br>
+                  • 턱 긴장: 2점<br>
+                  • 머리 움직임: 1점<br>
+                  • 손 떨림: 0점
+                </td>
+                <td style="font-weight:700; color:#4338ca;">5점 (합계)</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="font-size:0.8rem; color:#475569; margin-top:6px; background:#f8fafc; padding:6px; border-radius:4px;">
+            [SSI-4 총점별 성인/청소년 중증도 기준표]: 10~17점(매우 경도), 18~24점(경도), 25~31점(중등도), 32~36점(중도), 37점 이상(매우 중도)
+          </div>
+        `,
+        prompt: "이 청소년의 SSI-4 총점(Total Overall Score)과 중증도 판정 등급은 무엇인가?",
+        options: [
+          "21점 - 경도 (Mild)",
+          "24점 - 경도 (Mild)",
+          "26점 - 중등도 (Moderate)",
+          "26점 - 중도 (Severe)",
+          "31점 - 중도 (Severe)"
+        ],
+        correctIndex: 2, // ③ 26점 - 중등도
+        hintFormula: "SSI-4 총점 = 빈도 점수 + 지속시간 점수 + 신체 부수행동 점수",
+        explanation: {
+          info: "• 빈도 변환 점수: 13점<br>• 지속시간 변환 점수: 8점<br>• 신체 부수행동 총점: 2 + 2 + 1 + 0 = 5점",
+          formula: "SSI-4 총점 = 빈도점수 + 지속시간점수 + 신체부수행동점수",
+          steps: [
+            "신체 부수행동 점수 = 2(눈) + 2(턱) + 1(머리) + 0(손) = 5점",
+            "총점 = 13 + 8 + 5 = 26점",
+            "26점은 SSI-4 기준표의 25~31점 구간에 속하므로 '중등도(Moderate)'에 해당"
+          ],
+          answer: "정답은 ③번 (26점 - 중등도)입니다. 세 영역의 점수를 정확히 합산하고 기준표의 절단점에 맞추어 중등도를 판정해야 합니다.",
+          distractors: [
+            { opt: "①", text: "21점 - 경도: 부수행동 5점을 통째로 누락하여 (13+8=21) 경도로 판정한 오류" },
+            { opt: "②", text: "24점 - 경도: 부수행동 중 2점을 누락하여 24점으로 계산한 오답" },
+            { opt: "④", text: "26점 - 중도: 총점 26점은 맞았으나 26점을 '중도' 등급으로 오판" },
+            { opt: "⑤", text: "31점 - 중도: 점수 합산 실수" }
+          ]
+        }
+      }
+    ];
+
+    /* =========================================================
+       2. APPLICATION STATE & STORAGE CONTROLLER
+       ========================================================= */
+    const app = {
+      currentScreen: 'dashboard',
+      quizMode: 'practice', // 'practice' | 'exam' | 'review' | 'notes-practice'
+      currentDomain: 'all', // 'articulation' | 'fluency' | 'all'
+      activeQuestions: [],
+      currentIndex: 0,
+      userAnswers: {},       // { [qIndex]: selectedOptionIndex }
+      timerInterval: null,
+      timeRemaining: 15 * 60, // 15 minutes in seconds
+      
+      // Local Storage Keys
+      STORAGE_HISTORY: 'slp_exam_history_v1',
+      STORAGE_WRONG: 'slp_wrong_answers_v1',
+      STORAGE_BOOKMARKS: 'slp_bookmarks_v1',
+
+      init() {
+        this.updateStatsDisplay();
+        this.renderNotesList();
+        // Keyboard navigation
+        window.addEventListener('keydown', (e) => {
+          if (this.currentScreen === 'quiz') {
+            if (e.key >= '1' && e.key <= '5') {
+              this.selectOption(parseInt(e.key) - 1);
+            }
+          }
+        });
+      },
+
+      // LocalStorage Helpers
+      getStorage(key) {
+        try {
+          const item = localStorage.getItem(key);
+          return item ? JSON.parse(item) : [];
+        } catch (e) {
+          console.error("Storage read error", e);
+          return [];
+        }
+      },
+
+      setStorage(key, val) {
+        try {
+          localStorage.setItem(key, JSON.stringify(val));
+        } catch (e) {
+          console.error("Storage write error", e);
+        }
+      },
+
+      addWrongAnswer(qId) {
+        const wrongList = this.getStorage(this.STORAGE_WRONG);
+        if (!wrongList.includes(qId)) {
+          wrongList.push(qId);
+          this.setStorage(this.STORAGE_WRONG, wrongList);
+          this.updateStatsDisplay();
+        }
+      },
+
+      removeWrongAnswer(qId) {
+        let wrongList = this.getStorage(this.STORAGE_WRONG);
+        wrongList = wrongList.filter(id => id !== qId);
+        this.setStorage(this.STORAGE_WRONG, wrongList);
+        this.updateStatsDisplay();
+        this.renderNotesList();
+      },
+
+      toggleBookmark() {
+        const q = this.activeQuestions[this.currentIndex];
+        let bookmarks = this.getStorage(this.STORAGE_BOOKMARKS);
+        const idx = bookmarks.indexOf(q.id);
+        if (idx > -1) {
+          bookmarks.splice(idx, 1);
+          alert('북마크가 해제되었습니다.');
+        } else {
+          bookmarks.push(q.id);
+          alert('북마크에 등록되었습니다. ⭐');
+        }
+        this.setStorage(this.STORAGE_BOOKMARKS, bookmarks);
+        this.updateBookmarkButtonState();
+      },
+
+      updateBookmarkButtonState() {
+        const q = this.activeQuestions[this.currentIndex];
+        const bookmarks = this.getStorage(this.STORAGE_BOOKMARKS);
+        const btn = document.getElementById('q-bookmark-btn');
+        if (btn) {
+          if (bookmarks.includes(q.id)) {
+            btn.innerHTML = '<span>⭐</span> <span style="color:#d97706; font-weight:700;">북마크됨</span>';
+          } else {
+            btn.innerHTML = '<span>☆</span> <span>북마크</span>';
+          }
+        }
+      },
+
+      updateStatsDisplay() {
+        const history = this.getStorage(this.STORAGE_HISTORY);
+        const wrongList = this.getStorage(this.STORAGE_WRONG);
+
+        // Calculate total questions attempted and overall accuracy from history
+        let totalAttempts = 0;
+        let totalCorrect = 0;
+        let bestScore = null;
+
+        history.forEach(h => {
+          totalAttempts += (h.total || 0);
+          totalCorrect += (h.score || 0);
+          if (h.percentage !== undefined) {
+            if (bestScore === null || h.percentage > bestScore) {
+              bestScore = h.percentage;
+            }
+          }
+        });
+
+        const accuracy = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
+
+        document.getElementById('stat-total-solved').innerText = `${totalAttempts}회 풀이`;
+        document.getElementById('stat-accuracy').innerText = `${accuracy}%`;
+        document.getElementById('stat-wrong-count').innerText = `${wrongList.length}문항`;
+        document.getElementById('stat-best-score').innerText = bestScore !== null ? `${bestScore}점` : '-';
+        
+        // Badges in header & card
+        const navBadge = document.getElementById('nav-notes-badge');
+        const cardBadge = document.getElementById('card-notes-badge');
+        if (wrongList.length > 0) {
+          navBadge.style.display = 'inline-block';
+          navBadge.innerText = wrongList.length;
+          cardBadge.innerText = `${wrongList.length}문항 보관`;
+        } else {
+          navBadge.style.display = 'none';
+          cardBadge.innerText = '0문항 보관';
+        }
+      },
+
+      resetAllData() {
+        if (confirm('학습 기록, 모의고사 성적, 오답노트를 모두 초기화하시겠습니까?')) {
+          localStorage.removeItem(this.STORAGE_HISTORY);
+          localStorage.removeItem(this.STORAGE_WRONG);
+          localStorage.removeItem(this.STORAGE_BOOKMARKS);
+          this.updateStatsDisplay();
+          this.renderNotesList();
+          alert('모든 학습 데이터가 초기화되었습니다.');
+        }
+      },
+
+      /* =========================================================
+         3. SCREEN NAVIGATION
+         ========================================================= */
+      showScreen(screenId) {
+        document.querySelectorAll('.view-screen').forEach(el => el.classList.remove('active'));
+        const target = document.getElementById(`view-${screenId}`);
+        if (target) {
+          target.classList.add('active');
+          this.currentScreen = screenId;
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        if (screenId === 'notes') {
+          this.renderNotesList();
+        }
+        if (screenId === 'dashboard') {
+          this.stopTimer();
+          this.updateStatsDisplay();
+        }
+      },
+
+      confirmExitQuiz() {
+        if (this.quizMode === 'exam') {
+          if (confirm('시험을 중단하고 대시보드로 나가시겠습니까? 진행 중인 답안은 저장되지 않습니다.')) {
+            this.stopTimer();
+            this.showScreen('dashboard');
+          }
+        } else {
+          this.showScreen('dashboard');
+        }
+      },
+
+      /* =========================================================
+         4. PRACTICE MODE LOGIC
+         ========================================================= */
+      startPractice(domain) {
+        this.quizMode = 'practice';
+        this.currentDomain = domain;
+        this.userAnswers = {};
+        this.currentIndex = 0;
+
+        if (domain === 'articulation') {
+          this.activeQuestions = QUESTION_BANK.filter(q => q.domain === 'articulation');
+        } else if (domain === 'fluency') {
+          this.activeQuestions = QUESTION_BANK.filter(q => q.domain === 'fluency');
+        } else {
+          this.activeQuestions = [...QUESTION_BANK];
+        }
+
+        this.setupQuizUI();
+        this.showScreen('quiz');
+        this.renderCurrentQuestion();
+      },
+
+      startPracticeFromNotes() {
+        const wrongIds = this.getStorage(this.STORAGE_WRONG);
+        if (wrongIds.length === 0) {
+          alert('오답노트에 보관된 문항이 없습니다.');
+          return;
+        }
+        this.quizMode = 'practice';
+        this.currentDomain = 'all';
+        this.userAnswers = {};
+        this.currentIndex = 0;
+        this.activeQuestions = QUESTION_BANK.filter(q => wrongIds.includes(q.id));
+
+        this.setupQuizUI();
+        this.showScreen('quiz');
+        this.renderCurrentQuestion();
+      },
+
+      /* =========================================================
+         5. REAL MOCK EXAM MODE (10 Questions Mixed / Timer)
+         ========================================================= */
+      startMockExam() {
+        this.quizMode = 'exam';
+        this.currentDomain = 'all';
+        this.userAnswers = {};
+        this.currentIndex = 0;
+        this.timeRemaining = 15 * 60; // 15 mins
+
+        // Sample 5 from Articulation and 5 from Fluency
+        const artQ = QUESTION_BANK.filter(q => q.domain === 'articulation');
+        const fluQ = QUESTION_BANK.filter(q => q.domain === 'fluency');
+        
+        // Shuffle helper
+        const shuffle = arr => [...arr].sort(() => 0.5 - Math.random());
+        const selectedArt = shuffle(artQ).slice(0, 5);
+        const selectedFlu = shuffle(fluQ).slice(0, 5);
+
+        // Mix: 5 art then 5 flu, or interleaved
+        this.activeQuestions = [...selectedArt, ...selectedFlu];
+
+        this.setupQuizUI();
+        this.startTimer();
+        this.showScreen('quiz');
+        this.renderCurrentQuestion();
+      },
+
+      startTimer() {
+        this.stopTimer();
+        this.updateTimerDisplay();
+        this.timerInterval = setInterval(() => {
+          this.timeRemaining--;
+          this.updateTimerDisplay();
+          if (this.timeRemaining <= 0) {
+            this.stopTimer();
+            alert('시험 제한시간(15분)이 종료되었습니다. 작성된 답안을 자동 제출합니다.');
+            this.submitExam();
+          }
+        }, 1000);
+      },
+
+      stopTimer() {
+        if (this.timerInterval) {
+          clearInterval(this.timerInterval);
+          this.timerInterval = null;
+        }
+      },
+
+      updateTimerDisplay() {
+        const timerBox = document.getElementById('quiz-timer-container');
+        const timerText = document.getElementById('quiz-timer-display');
+        const m = Math.floor(this.timeRemaining / 60);
+        const s = this.timeRemaining % 60;
+        timerText.innerText = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        if (this.timeRemaining < 180) { // < 3 mins warning
+          timerBox.classList.add('warning');
+        } else {
+          timerBox.classList.remove('warning');
+        }
+      },
+
+      /* =========================================================
+         6. QUIZ UI SETUP & RENDERING
+         ========================================================= */
+      setupQuizUI() {
+        const domainBadge = document.getElementById('quiz-domain-badge');
+        const modeBadge = document.getElementById('quiz-mode-badge');
+        const timerContainer = document.getElementById('quiz-timer-container');
+        const hintBtn = document.getElementById('q-hint-toggle-btn');
+        const checkAnswerBtn = document.getElementById('btn-check-answer');
+        const omrSubmitArea = document.getElementById('omr-submit-btn-area');
+
+        if (this.quizMode === 'exam') {
+          domainBadge.innerText = "국시 실전 모의고사";
+          domainBadge.style.background = "#fef3c7";
+          domainBadge.style.color = "#d97706";
+          modeBadge.innerText = "실전 시험";
+          timerContainer.style.display = "flex";
+          hintBtn.style.display = "none";
+          checkAnswerBtn.style.display = "none";
+          omrSubmitArea.innerHTML = `
+            <button class="btn btn-emerald btn-sm" onclick="app.confirmSubmitExam()">답안 제출</button>
+          `;
+        } else if (this.quizMode === 'review') {
+          domainBadge.innerText = "모의고사 결과 복습";
+          domainBadge.style.background = "#e0e7ff";
+          domainBadge.style.color = "#4338ca";
+          modeBadge.innerText = "해설 검토";
+          timerContainer.style.display = "none";
+          hintBtn.style.display = "none";
+          checkAnswerBtn.style.display = "none";
+          omrSubmitArea.innerHTML = `
+            <button class="btn btn-ghost btn-sm" onclick="app.showScreen('result')">성적표 보기</button>
+          `;
+        } else {
+          // Practice mode
+          domainBadge.innerText = this.currentDomain === 'articulation' ? "조음음운장애" : (this.currentDomain === 'fluency' ? "유창성장애" : "종합 훈련");
+          domainBadge.style.background = "#e0e7ff";
+          domainBadge.style.color = "#4338ca";
+          modeBadge.innerText = "연습 모드";
+          timerContainer.style.display = "none";
+          hintBtn.style.display = "inline-flex";
+          checkAnswerBtn.style.display = "inline-flex";
+          omrSubmitArea.innerHTML = "";
+        }
+
+        this.renderOMRStrip();
+      },
+
+      renderOMRStrip() {
+        const list = document.getElementById('omr-pills-list');
+        list.innerHTML = "";
+
+        this.activeQuestions.forEach((q, idx) => {
+          const pill = document.createElement('div');
+          pill.className = 'omr-pill';
+          pill.innerText = idx + 1;
+          pill.onclick = () => this.jumpToQuestion(idx);
+
+          if (idx === this.currentIndex) {
+            pill.classList.add('active');
+          }
+
+          if (this.userAnswers[idx] !== undefined) {
+            pill.classList.add('answered');
+          }
+
+          // In Review mode, color green or red
+          if (this.quizMode === 'review') {
+            if (this.userAnswers[idx] === q.correctIndex) {
+              pill.classList.add('correct-review');
+            } else {
+              pill.classList.add('incorrect-review');
+            }
+          }
+
+          list.appendChild(pill);
+        });
+      },
+
+      renderCurrentQuestion() {
+        const q = this.activeQuestions[this.currentIndex];
+        if (!q) return;
+
+        // Progress Text
+        document.getElementById('quiz-progress-text').innerText = `${this.currentIndex + 1} / ${this.activeQuestions.length}`;
+        document.getElementById('q-number-title').innerText = `문항 ${this.currentIndex + 1}. [${q.domainName}]`;
+
+        // Scenario & Tables
+        document.getElementById('q-scenario-text').innerHTML = q.scenario;
+        document.getElementById('q-table-container').innerHTML = q.table || "";
+        document.getElementById('q-prompt-text').innerText = q.prompt;
+
+        // Hint reset
+        const hintCard = document.getElementById('hint-card');
+        hintCard.classList.remove('show');
+        document.getElementById('hint-content').innerText = q.hintFormula;
+
+        // Bookmark state
+        this.updateBookmarkButtonState();
+
+        // Render 5 Options
+        const container = document.getElementById('options-container');
+        container.innerHTML = "";
+        const circles = ["①", "②", "③", "④", "⑤"];
+
+        q.options.forEach((optText, optIdx) => {
+          const item = document.createElement('div');
+          item.className = 'option-item';
+          item.onclick = () => this.selectOption(optIdx);
+
+          const isSelected = this.userAnswers[this.currentIndex] === optIdx;
+          if (isSelected) item.classList.add('selected');
+
+          // If in Review mode or answered in practice mode with explanation showing
+          if (this.quizMode === 'review' || (this.quizMode === 'practice' && this.isExplanationVisible())) {
+            if (optIdx === q.correctIndex) {
+              item.classList.add('correct');
+            } else if (isSelected && optIdx !== q.correctIndex) {
+              item.classList.add('incorrect');
+            }
+          }
+
+          item.innerHTML = `
+            <div class="opt-circle">${circles[optIdx]}</div>
+            <div class="opt-text">${optText}</div>
+          `;
+          container.appendChild(item);
+        });
+
+        // Navigation button states
+        document.getElementById('btn-prev-q').disabled = this.currentIndex === 0;
+        document.getElementById('btn-next-q').disabled = this.currentIndex === this.activeQuestions.length - 1;
+
+        // OMR Update
+        this.renderOMRStrip();
+
+        // Explanation handling
+        const expContainer = document.getElementById('explanation-container');
+        if (this.quizMode === 'review') {
+          this.renderExplanation(q);
+          expContainer.classList.add('show');
+        } else {
+          // If already checked in practice mode
+          if (this.quizMode === 'practice' && this.userAnswers[this.currentIndex] !== undefined && this.isExplanationVisible()) {
+            this.renderExplanation(q);
+            expContainer.classList.add('show');
+          } else {
+            expContainer.classList.remove('show');
+          }
+        }
+      },
+
+      isExplanationVisible() {
+        const exp = document.getElementById('explanation-container');
+        return exp && exp.classList.contains('show');
+      },
+
+      selectOption(optIdx) {
+        if (this.quizMode === 'review') return; // Read-only in review mode
+
+        this.userAnswers[this.currentIndex] = optIdx;
+        this.renderCurrentQuestion();
+      },
+
+      toggleHint() {
+        const hintCard = document.getElementById('hint-card');
+        hintCard.classList.toggle('show');
+      },
+
+      jumpToQuestion(idx) {
+        this.currentIndex = idx;
+        this.renderCurrentQuestion();
+        window.scrollTo({ top: 120, behavior: 'smooth' });
+      },
+
+      prevQuestion() {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.renderCurrentQuestion();
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        }
+      },
+
+      nextQuestion() {
+        if (this.currentIndex < this.activeQuestions.length - 1) {
+          this.currentIndex++;
+          this.renderCurrentQuestion();
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        }
+      },
+
+      /* =========================================================
+         7. PRACTICE CHECK ANSWER & 5-PART EXPLANATION
+         ========================================================= */
+      checkCurrentAnswer() {
+        const selected = this.userAnswers[this.currentIndex];
+        if (selected === undefined) {
+          alert('답안(①~⑤)을 먼저 선택해 주세요.');
+          return;
+        }
+
+        const q = this.activeQuestions[this.currentIndex];
+        const isCorrect = selected === q.correctIndex;
+
+        // Track in history & wrong note
+        if (!isCorrect) {
+          this.addWrongAnswer(q.id);
+        }
+
+        // Render explanation
+        this.renderExplanation(q);
+        const expCard = document.getElementById('explanation-container');
+        expCard.classList.add('show');
+        
+        // Re-render choices with green/red highlight
+        this.renderCurrentQuestion();
+
+        // Scroll to explanation
+        setTimeout(() => {
+          expCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      },
+
+      renderExplanation(q) {
+        const selected = this.userAnswers[this.currentIndex];
+        const isCorrect = selected === q.correctIndex;
+        const verdictTag = document.getElementById('exp-verdict-tag');
+
+        if (selected === undefined) {
+          verdictTag.innerText = "미표기 문항";
+          verdictTag.className = "exp-verdict-badge";
+          verdictTag.style.background = "#f1f5f9";
+          verdictTag.style.color = "#64748b";
+        } else if (isCorrect) {
+          verdictTag.innerText = "정답! 👏";
+          verdictTag.className = "exp-verdict-badge";
+          verdictTag.style.background = "var(--emerald-100)";
+          verdictTag.style.color = "var(--emerald-600)";
+        } else {
+          verdictTag.innerText = "오답 ⚠️";
+          verdictTag.className = "exp-verdict-badge";
+          verdictTag.style.background = "var(--rose-100)";
+          verdictTag.style.color = "var(--rose-600)";
+        }
+
+        // 1. Info
+        document.getElementById('exp-info-content').innerHTML = q.explanation.info;
+
+        // 2. Formula
+        document.getElementById('exp-formula-content').innerHTML = `
+          <div class="formula-display">${q.explanation.formula}</div>
+        `;
+
+        // 3. Steps
+        const stepsList = document.getElementById('exp-steps-list');
+        stepsList.innerHTML = "";
+        q.explanation.steps.forEach(step => {
+          const li = document.createElement('li');
+          li.innerText = step;
+          stepsList.appendChild(li);
+        });
+
+        // 4. Answer
+        document.getElementById('exp-answer-content').innerText = q.explanation.answer;
+
+        // 5. Distractors
+        const distList = document.getElementById('exp-distractors-list');
+        distList.innerHTML = "";
+        q.explanation.distractors.forEach(d => {
+          const item = document.createElement('div');
+          item.className = 'distractor-item';
+          item.innerHTML = `<span class="dist-num">${d.opt}번:</span> ${d.text}`;
+          distList.appendChild(item);
+        });
+      },
+
+      /* =========================================================
+         8. MOCK EXAM SUBMISSION & SCORING
+         ========================================================= */
+      confirmSubmitExam() {
+        const answeredCount = Object.keys(this.userAnswers).length;
+        const totalCount = this.activeQuestions.length;
+        const unanswered = totalCount - answeredCount;
+
+        let msg = `전체 ${totalCount}문항 중 ${answeredCount}문항을 마킹하셨습니다.`;
+        if (unanswered > 0) {
+          msg += `\n⚠️ 아직 ${unanswered}문항에 답안을 마킹하지 않았습니다.`;
+        }
+        msg += "\n답안을 최종 제출하시겠습니까?";
+
+        if (confirm(msg)) {
+          this.submitExam();
+        }
+      },
+
+      submitExam() {
+        this.stopTimer();
+
+        let correctCount = 0;
+        let artTotal = 0, artCorrect = 0;
+        let fluTotal = 0, fluCorrect = 0;
+
+        this.activeQuestions.forEach((q, idx) => {
+          const ans = this.userAnswers[idx];
+          const isCorrect = ans === q.correctIndex;
+          if (isCorrect) correctCount++;
+          else this.addWrongAnswer(q.id);
+
+          if (q.domain === 'articulation') {
+            artTotal++;
+            if (isCorrect) artCorrect++;
+          } else if (q.domain === 'fluency') {
+            fluTotal++;
+            if (isCorrect) fluCorrect++;
+          }
+        });
+
+        const totalScore = Math.round((correctCount / this.activeQuestions.length) * 100);
+        const artRate = artTotal > 0 ? (artCorrect / artTotal) * 100 : 0;
+        const fluRate = fluTotal > 0 ? (fluCorrect / fluTotal) * 100 : 0;
+
+        // National exam criteria: Overall >= 60% AND each domain >= 40%
+        const isPass = totalScore >= 60 && artRate >= 40 && fluRate >= 40;
+
+        // Save history
+        const history = this.getStorage(this.STORAGE_HISTORY);
+        const timeTaken = (15 * 60) - this.timeRemaining;
+        const timeStr = `${Math.floor(timeTaken / 60)}분 ${timeTaken % 60}초`;
+
+        history.push({
+          date: new Date().toISOString(),
+          score: correctCount,
+          total: this.activeQuestions.length,
+          percentage: totalScore,
+          isPass: isPass,
+          timeStr: timeStr
+        });
+        this.setStorage(this.STORAGE_HISTORY, history);
+        this.updateStatsDisplay();
+
+        // Render Results UI
+        const badge = document.getElementById('res-pass-badge');
+        if (isPass) {
+          badge.className = 'result-badge pass';
+          badge.innerText = "국시 합격 기준 달성 🎉";
+        } else {
+          badge.className = 'result-badge fail';
+          let failReason = "과락 또는 총점 60% 미달 ⚠️";
+          if (totalScore >= 60 && (artRate < 40 || fluRate < 40)) {
+            failReason = "총점 통과했으나 영역별 과락(40% 미만) 발생 ⚠️";
+          }
+          badge.innerText = failReason;
+        }
+
+        document.getElementById('res-score-num').innerText = `${totalScore}점`;
+        document.getElementById('res-score-sub').innerText = 
+          `총 ${this.activeQuestions.length}문항 중 ${correctCount}문항 정답 | 소요 시간: ${timeStr}`;
+
+        document.getElementById('res-art-stat').innerText = `${artCorrect}/${artTotal} (${Math.round(artRate)}%)`;
+        document.getElementById('res-art-bar').style.width = `${artRate}%`;
+
+        document.getElementById('res-flu-stat').innerText = `${fluCorrect}/${fluTotal} (${Math.round(fluRate)}%)`;
+        document.getElementById('res-flu-bar').style.width = `${fluRate}%`;
+
+        this.showScreen('result');
+      },
+
+      reviewExamQuestions() {
+        this.quizMode = 'review';
+        this.currentIndex = 0;
+        this.setupQuizUI();
+        this.showScreen('quiz');
+        this.renderCurrentQuestion();
+      },
+
+      /* =========================================================
+         9. INCORRECT ANSWERS NOTE VIEW
+         ========================================================= */
+      renderNotesList() {
+        const wrongIds = this.getStorage(this.STORAGE_WRONG);
+        const container = document.getElementById('notes-list-container');
+        const emptyState = document.getElementById('notes-empty-state');
+        const practiceBtn = document.getElementById('btn-practice-all-notes');
+
+        if (wrongIds.length === 0) {
+          container.innerHTML = "";
+          emptyState.style.display = "block";
+          practiceBtn.style.display = "none";
+          return;
+        }
+
+        emptyState.style.display = "none";
+        practiceBtn.style.display = "inline-flex";
+        container.innerHTML = "";
+
+        wrongIds.forEach(id => {
+          const q = QUESTION_BANK.find(item => item.id === id);
+          if (!q) return;
+
+          const card = document.createElement('div');
+          card.className = 'note-card';
+          card.innerHTML = `
+            <div class="note-top">
+              <div style="display:flex; align-items:center; gap:0.5rem;">
+                <span class="logo-badge" style="background:${q.domain==='articulation'?'#e0e7ff':'#d1fae5'}; color:${q.domain==='articulation'?'#4338ca':'#059669'};">
+                  ${q.domainName}
+                </span>
+                <span style="font-size:0.85rem; font-weight:700; color:var(--slate-800);">${q.title}</span>
+              </div>
+              <button class="btn btn-ghost btn-sm" onclick="app.removeWrongAnswer('${q.id}')" title="오답노트에서 제거">
+                ✓ 이해 완료(삭제)
+              </button>
+            </div>
+            <div style="font-size:0.9rem; color:var(--slate-700); line-height:1.5; margin-bottom:0.75rem;">
+              ${q.prompt}
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div style="font-size:0.8rem; color:var(--slate-500);">
+                정답: <strong>${q.options[q.correctIndex]}</strong>
+              </div>
+              <button class="btn btn-outline-primary btn-sm" onclick="app.solveSingleWrongQuestion('${q.id}')">
+                문제 다시 풀기 ▶
+              </button>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+      },
+
+      solveSingleWrongQuestion(qId) {
+        const q = QUESTION_BANK.find(item => item.id === qId);
+        if (!q) return;
+
+        this.quizMode = 'practice';
+        this.currentDomain = q.domain;
+        this.activeQuestions = [q];
+        this.currentIndex = 0;
+        this.userAnswers = {};
+
+        this.setupQuizUI();
+        this.showScreen('quiz');
+        this.renderCurrentQuestion();
+      },
+
+      /* =========================================================
+         10. FORMULA MODAL & CALCULATOR TOGGLES
+         ========================================================= */
+      openFormulaModal() {
+        document.getElementById('formula-modal').classList.add('active');
+      },
+
+      closeFormulaModal() {
+        document.getElementById('formula-modal').classList.remove('active');
+      },
+
+      toggleCalculator() {
+        document.getElementById('calc-panel').classList.toggle('active');
+      }
+    };
+
+    /* =========================================================
+       11. EMBEDDED SLP MINI CALCULATOR ENGINE
+       ========================================================= */
+    const calc = {
+      displayVal: '0',
+      subDisplayVal: '',
+      firstOperand: null,
+      operator: null,
+      waitingForSecondOperand: false,
+
+      updateDisplays() {
+        document.getElementById('calc-main').innerText = this.displayVal;
+        document.getElementById('calc-sub').innerText = this.subDisplayVal;
+      },
+
+      inputDigit(digit) {
+        if (this.waitingForSecondOperand) {
+          this.displayVal = digit === '.' ? '0.' : digit;
+          this.waitingForSecondOperand = false;
+        } else {
+          if (digit === '.') {
+            if (!this.displayVal.includes('.')) {
+              this.displayVal += '.';
+            }
+          } else {
+            this.displayVal = this.displayVal === '0' ? digit : this.displayVal + digit;
+          }
+        }
+        this.updateDisplays();
+      },
+
+      inputOp(op) {
+        const inputNum = parseFloat(this.displayVal);
+
+        if (op === '%') {
+          // Quick percent of current display
+          this.displayVal = String(inputNum / 100);
+          this.updateDisplays();
+          return;
+        }
+
+        if (this.firstOperand === null && !isNaN(inputNum)) {
+          this.firstOperand = inputNum;
+        } else if (this.operator) {
+          const result = this.performMath(this.operator, this.firstOperand, inputNum);
+          this.displayVal = `${parseFloat(result.toFixed(6))}`;
+          this.firstOperand = result;
+        }
+
+        this.waitingForSecondOperand = true;
+        this.operator = op;
+        this.subDisplayVal = `${this.firstOperand} ${op}`;
+        this.updateDisplays();
+      },
+
+      performMath(op, first, second) {
+        switch (op) {
+          case '+': return first + second;
+          case '-': return first - second;
+          case '*': return first * second;
+          case '/': return second !== 0 ? first / second : 0;
+          default: return second;
+        }
+      },
+
+      calculate() {
+        if (this.operator === null || this.waitingForSecondOperand) return;
+
+        const secondOperand = parseFloat(this.displayVal);
+        const result = this.performMath(this.operator, this.firstOperand, secondOperand);
+        
+        this.subDisplayVal = `${this.firstOperand} ${this.operator} ${secondOperand} =`;
+        this.displayVal = `${parseFloat(result.toFixed(6))}`;
+        this.firstOperand = null;
+        this.operator = null;
+        this.waitingForSecondOperand = true;
+        this.updateDisplays();
+      },
+
+      clear() {
+        this.displayVal = '0';
+        this.subDisplayVal = '';
+        this.firstOperand = null;
+        this.operator = null;
+        this.waitingForSecondOperand = false;
+        this.updateDisplays();
+      },
+
+      backspace() {
+        if (this.waitingForSecondOperand) return;
+        if (this.displayVal.length > 1) {
+          this.displayVal = this.displayVal.slice(0, -1);
+        } else {
+          this.displayVal = '0';
+        }
+        this.updateDisplays();
+      }
+    };
+
+    // Initialize application on window load
+    window.addEventListener('DOMContentLoaded', () => {
+      app.init();
+    });
+  </script>
+</body>
+</html>
